@@ -1,28 +1,26 @@
-		<!-- Jquery js-->
-		<script src="aronox/assets/js/vendors/jquery-3.4.0.min.js"></script>
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="hud/assets/js/vendor.min.js"></script>
+	<script src="hud/assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!--Othercharts js-->
+	<script src="aronox/assets/plugins/othercharts/jquery.sparkline.min.js"></script>
 
-		<!-- Bootstrap4 js-->
-		<script src="aronox/assets/plugins/bootstrap/popper.min.js"></script>
-		<script src="aronox/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Circle-progress js-->
+	<script src="aronox/assets/js/vendors/circle-progress.min.js"></script>
 
-		<!--Othercharts js-->
-		<script src="aronox/assets/plugins/othercharts/jquery.sparkline.min.js"></script>
+	<!--Horizontal js-->
+	<script src="aronox/assets/plugins/horizontal-menu/horizontal.js"></script>
 
-		<!-- Circle-progress js-->
-		<script src="aronox/assets/js/vendors/circle-progress.min.js"></script>
-
-		<!--Horizontal js-->
-		<script src="aronox/assets/plugins/horizontal-menu/horizontal.js"></script>
-
-		<!-- P-scroll js-->
-		<script src="aronox/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
-		
-		<!-- Peitychart js-->
-		<script src="aronox/assets/plugins/peitychart/jquery.peity.min.js"></script>
-		
-		<!-- Custom js-->
-		<script src="aronox/assets/js/custom.js"></script>
-			
+	<!-- P-scroll js-->
+	<script src="aronox/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+	
+	<!-- Peitychart js--
+	<script src="aronox/assets/plugins/peitychart/jquery.peity.min.js"></script>
+	
+	<!-- Custom js--
+	<script src="aronox/assets/js/custom.js"></script-->
+	
 	<script src="vendor/bootstrap/js/moment.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap-select.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap-datetimepicker.min.js"></script>

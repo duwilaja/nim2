@@ -12,23 +12,10 @@
 		<!--Favicon -->
 		<link rel="icon" href="aronox/assets/images/brand/favicon.ico" type="image/x-icon"/>
 
-		<!-- Style css -->
-		<link href="aronox/assets/css/style.css" rel="stylesheet" />
-
-		<!--Horizontal css -->
-        <link id="effect" href="aronox/assets/plugins/horizontal-menu/dropdown-effects/fade-up.css" rel="stylesheet" />
-        <link href="aronox/assets/plugins/horizontal-menu/horizontal.css" rel="stylesheet" />
-
-		<!-- P-scroll bar css-->
-		<link href="aronox/assets/plugins/p-scroll/perfect-scrollbar.css" rel="stylesheet" />
-
-		<!---Icons css-->
-		<link href="aronox/assets/plugins/iconfonts/icons.css" rel="stylesheet" />
-		<link href="aronox/assets/plugins/iconfonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-		<link href="aronox/assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
-
-		<!-- Skin css-->
-		<link id="theme" rel="stylesheet" type="text/css" media="all" href="aronox/assets/skins/<?php echo $theme?>" />
+		<!-- ================== BEGIN core-css ================== -->
+		<link href="hud/assets/css/vendor.min.css" rel="stylesheet" />
+		<link href="hud/assets/css/app.min.css" rel="stylesheet" />
+		<!-- ================== END core-css ================== -->
 		
 		<!-- datatables CSS-->
 		<!--link rel="stylesheet" href="vendor/datatables/datatables.min.css"-->
@@ -53,13 +40,8 @@
 
 	</head>
 
-	<body class="app"><!-- Start Switcher -->
+	<body class="pace-top">
 		
-		<!---Global-loader-->
-		<div id="global-loader" >
-			<img src="aronox/assets/images/svgs/loader.svg" alt="loader">
-		</div>
-
-		<div class="page">
-			<div class="page-main">
-			
+		<!-- BEGIN #app -->
+		<div id="app" class="app">
+		

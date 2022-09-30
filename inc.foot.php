@@ -1,6 +1,4 @@
-			</div>
-
-			<!--Footer-->
+			<!--Footer--
 			<footer class="footer">
 				<div class="container">
 					<div class="row align-items-center flex-row-reverse">
@@ -11,11 +9,10 @@
 				</div>
 			</footer>
 			<!-- End Footer-->
-
-		</div>
 	
-		<!-- Back to top -->
-		<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- BEGIN btn-scroll-top -->
+		<a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+		<!-- END btn-scroll-top -->
 
 	  <div class="modal fade" id="modal_delete">
         <div class="modal-dialog">
@@ -60,3 +57,6 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
+	  
+		</div>
+		<!-- END #app -->
