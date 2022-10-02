@@ -15,7 +15,7 @@
 	<!-- P-scroll js-->
 	<script src="aronox/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
 	
-	<!-- Peitychart js--
+	<!-- Peitychart js-->
 	<script src="aronox/assets/plugins/peitychart/jquery.peity.min.js"></script>
 	
 	<!-- Custom js--

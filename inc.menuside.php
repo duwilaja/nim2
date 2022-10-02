@@ -24,45 +24,45 @@
 							<span class="menu-text">Topology View</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<!--div class="menu-item">
 						<a href="rootcause.html" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-hdd-network"></i></span>
 							<span class="menu-text">Root Cause Analysis</span>
 						</a>
-					</div>
+					</div-->
 					<div class="menu-header">Components</div>
 					<div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
 								<i class="bi bi-hdd-rack"></i>
-								<span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
 							</div>
 							<div class="menu-text d-flex align-items-center">Objects</div> 
 							<span class="menu-caret"><b class="caret"></b></span>
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="devices.html"  class="menu-link">
+								<a href="n_device<?php echo $ext?>"  class="menu-link">
 									<div class="menu-text">Devices</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="alerts.html"  class="menu-link">
-									<div class="menu-text">Alerts</div>
+								<a href="n_location<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Locations</div>
 								</a>
 							</div>
-							<div class="menu-item">
+							<!--div class="menu-item">
 								<a href="syslogs.html"  class="menu-link">
 									<div class="menu-text">Syslogs</div>
 								</a>
-							</div>
+							</div-->
 						</div>
 					</div>
-					<div class="menu-item has-sub">
+					<!--div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
 								<i class="bi bi-heart-pulse"></i>
-								<span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span--
 							</div>
 							<div class="menu-text d-flex align-items-center">Health</div> 
 							<span class="menu-caret"><b class="caret"></b></span>
@@ -95,7 +95,7 @@
 								</a>
 							</div>
 						</div>
-					</div>
+					</div-->
 					<div class="menu-item has-sub">
 						<a href="#" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-journals"></i></span>
@@ -104,38 +104,33 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="ip.html" class="menu-link">
-									<span class="menu-text">IP</span>
+								<a href="r_device<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Devices</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="performance-sla.html" class="menu-link">
-									<span class="menu-text">Performance SLA</span>
+								<a href="r_location<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Locations</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="detailed-performance.html" class="menu-link">
-									<span class="menu-text">Detailed Performance</span>
+								<a href="r_perf<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Performance</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="usage-latency.html" class="menu-link">
-									<span class="menu-text">Usage & Latency</span>
+								<a href="r_sla<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">SLA</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="health.html" class="menu-link">
-									<span class="menu-text">Health</span>
+								<a href="r_severity<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Severity</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="inventory-list.html" class="menu-link">
-									<span class="menu-text">Inventory List</span>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="ports.html" class="menu-link">
-									<span class="menu-text">Ports</span>
+								<a href="r_updown<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">UP/Down</span>
 								</a>
 							</div>
 						</div>
@@ -143,43 +138,65 @@
 					<div class="menu-item has-sub">
 						<a href="#" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-gear"></i></span>
-							<span class="menu-text">Setup & Tools</span> 
+							<span class="menu-text">Setup</span> 
 							<span class="menu-caret"><b class="caret"></b></span>
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="devices-setup.html" class="menu-link">
+								<a href="m_device<?php echo $ext?>" class="menu-link">
 									<span class="menu-text">Devices</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="ips.html" class="menu-link">
-									<span class="menu-text">IPs</span>
+								<a href="m_location<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Locations</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="bast.html" class="menu-link">
-									<span class="menu-text">BAST</span>
+								<a href="m_topo<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Topology</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="sla.html" class="menu-link">
+								<a href="m_sla<?php echo $ext?>" class="menu-link">
 									<span class="menu-text">SLA</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="fault-saverity.html" class="menu-link">
-									<span class="menu-text">Fault Saverity</span>
+								<a href="m_severity<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Severity</span>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="smtp.html" class="menu-link">
-									<span class="menu-text">SMTP</span>
+								<a href="m_bg<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Reload Controls</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-wrench"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Tools</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="t_ping<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Ping</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="network-tools.html" class="menu-link">
-									<span class="menu-text">Network Tools</span>
+								<a href="t_trace<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Trace</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="t_snmp<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">SNMP</div>
 								</a>
 							</div>
 						</div>

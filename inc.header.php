@@ -22,7 +22,7 @@
 			
 			<!-- BEGIN brand -->
 			<div class="brand">
-				<a href="index.html" class="brand-logo">
+				<a href="home<?php echo $ext?>" class="brand-logo">
 					<img src="hud/assets/img/logo-tni-menubar-1.png" alt="brand-logo" height="50"/>
 					<span class="brand-text">PROMISE</span>
 				</a>
