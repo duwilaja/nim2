@@ -51,11 +51,11 @@
 									<div class="menu-text">Locations</div>
 								</a>
 							</div>
-							<!--div class="menu-item">
-								<a href="syslogs.html"  class="menu-link">
-									<div class="menu-text">Syslogs</div>
+							<div class="menu-item">
+								<a href="p_snmpd<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">SNMP</div>
 								</a>
-							</div-->
+							</div>
 						</div>
 					</div>
 					<!--div class="menu-item has-sub">
