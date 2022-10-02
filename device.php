@@ -170,8 +170,8 @@ $(document).ready(function(){
 	get_content("device_info<?php echo $ext?>",{h:"<?php echo $h?>"},".ldr-info","#isi-info");
 	get_content("device_status<?php echo $ext?>",{h:"<?php echo $h?>"},".ldr-status","#isi-status");
 	
-	get_content("/cgi-bin/log.sh",{h:"<?php echo $h?>",f:"log"},".ldr-log","#isi-tab6","GET");
-	get_content("/cgi-bin/log.sh",{h:"<?php echo $h?>",f:"trace"},".ldr-trace","#isi-tab7","GET");
+	get_content("<?php echo $cgi_url?>/cgi-bin/log.sh",{h:"<?php echo $h?>",f:"log"},".ldr-log","#isi-tab6","GET");
+	get_content("<?php echo $cgi_url?>/cgi-bin/log.sh",{h:"<?php echo $h?>",f:"trace"},".ldr-trace","#isi-tab7","GET");
 	
 	get_content("device_perf<?php echo $ext?>",{h:"<?php echo $h?>"},".ldr-perf","#isi-perf");
 	
