@@ -46,6 +46,9 @@
 	var page='<?php echo $menu?>';
 	$("button.btn-default").attr("data-bs-dismiss","modal");
 	$("button.close").attr("data-bs-dismiss","modal");
+	$("i.fe-upload").addClass("fa fa-upload").attr("data-bs-toggle","modal").attr("data-bs-target","#modal_batch");
+	$("i.fe-plus").addClass("fa fa-plus").attr("data-bs-toggle","modal").attr("data-bs-target","#myModal");
+	//$("i.fe-chevron-up").addClass("fa fa-chevron-up");
 	</script>
 	<!-- my own custom js -->
 	<script src="js/custom.js"></script>
