@@ -44,6 +44,8 @@
 	<script>
 	var ext='<?php echo $ext?>';
 	var page='<?php echo $menu?>';
+	$("button.btn-default").attr("data-bs-dismiss","modal");
+	$("button.close").attr("data-bs-dismiss","modal");
 	</script>
 	<!-- my own custom js -->
 	<script src="js/custom.js"></script>
