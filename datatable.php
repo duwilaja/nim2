@@ -185,7 +185,7 @@ while($row = fetch_row($result)){
 	}
 	
 	if($x!="-"&&$xx!="-"){ //- means no need to modify first column
-		$row[0]='<a href="#" class="dttbl"  title="Open" data-toggle="modal" data-target="#myModal" onclick="openForm(\''.$x.'\',\''.$row[$col-1].'\');">'.$row[0].'&nbsp;</a>';
+		$row[0]='<a href="#" class="dttbl"  title="Open" data-bs-toggle="modal" data-bs-target="#myModal" onclick="openForm(\''.$x.'\',\''.$row[$col-1].'\');">'.$row[0].'&nbsp;</a>';
 	}
 	
 	$output["data"][] = $row ;
