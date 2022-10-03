@@ -148,7 +148,7 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="m_location<?php echo $ext?>" class="menu-link">
+								<a href="m_loc<?php echo $ext?>" class="menu-link">
 									<span class="menu-text">Locations</span>
 								</a>
 							</div>
