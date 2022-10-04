@@ -49,6 +49,16 @@
 	$("i.fe-upload").addClass("fa fa-upload").attr("data-bs-toggle","modal").attr("data-bs-target","#modal_batch");
 	$("i.fe-plus").addClass("fa fa-plus").attr("data-bs-toggle","modal").attr("data-bs-target","#myModal");
 	$("i.fe-refresh-cw").addClass("fa fa-refresh");
+	
+	
+	var card_arrow =	'<div class="card-arrow">'+
+							'<div class="card-arrow-top-left"></div>'+
+							'<div class="card-arrow-top-right"></div>'+
+							'<div class="card-arrow-bottom-left"></div>'+
+							'<div class="card-arrow-bottom-right"></div>'+
+						'</div>';
+	$("div.card").append(card_arrow);
+	
 	</script>
 	<!-- my own custom js -->
 	<script src="js/custom.js"></script>
