@@ -140,7 +140,7 @@ disconnect($conn);
 			</div>
 			<div class="form-group col-md-6">
 				<label>SLA</label>
-				<select class="form-control selectpicker" name="sla" id="sla">
+				<select class="form-control" name="sla" id="sla">
 				<option value="0">Default 24/7</option>
 				<?php echo options($o_sla) ?>
 				</select>

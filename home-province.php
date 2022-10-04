@@ -23,3 +23,57 @@ for($i=0;$i<count($lists);$i++){
 <?php
 }
 ?>
+<script>
+var dataku=<?php  echo json_encode($lists)?>;
+function randomColor(){
+	return "#"+(Math.random().toString(16)+"000000").slice(2, 8).toUpperCase();
+}
+pie_chart("pie-loc",dataku);
+function pie_chart(canvas,data,colors=[]){
+	//-------------
+  //- PIE CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var datas=[];
+  var labels=[];
+  if(colors.length==0){
+	  for(var i=0;i<data.length;i++){
+		  colors.push(randomColor());
+		  labels.push(data[i][0]);
+		  datas.push(data[i][1]);
+	  }
+  }
+  
+    var pieChartCanvas = document.getElementById(canvas).getContext('2d');
+    var pieData        = {
+      labels: labels,/*[
+          'Chrome', 
+          'IE',
+          'FireFox', 
+          'Safari', 
+      ],*/
+      datasets: [
+        {
+          data: datas,//[700,500,400,600,300,100],
+          backgroundColor : colors,//['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var pieOptions = {
+		
+	};
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    var pieChart = new Chart(pieChartCanvas, {
+      type: "pie",
+      data: pieData,
+      options: pieOptions
+    })
+
+  //-----------------
+  //- END PIE CHART -
+  //-----------------
+  
+  return pieChart;
+}
+</script>
