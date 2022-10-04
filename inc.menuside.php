@@ -24,12 +24,12 @@
 							<span class="menu-text">Topology View</span>
 						</a>
 					</div>
-					<!--div class="menu-item">
-						<a href="rootcause.html" class="menu-link">
-							<span class="menu-icon"><i class="bi bi-hdd-network"></i></span>
-							<span class="menu-text">Root Cause Analysis</span>
+					<div class="menu-item">
+						<a href="maps<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-map"></i></span>
+							<span class="menu-text">Map View</span>
 						</a>
-					</div-->
+					</div>
 					<div class="menu-header">Components</div>
 					<div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
