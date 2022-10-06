@@ -90,13 +90,13 @@ include "inc.menutop.php";
 		  <div class="row">
 			<div class="form-group col-md-6">
 			<label>Start Day</label>
-				<select id="sd" name="sd" class="form-control selectpicker">
+				<select id="sd" name="sd" class="form-control ">
 					<?php echo options($o_days)?>
 				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label>End Day</label>
-				<select id="ed" name="ed" class="form-control selectpicker">
+				<select id="ed" name="ed" class="form-control ">
 					<?php echo options($o_days)?>
 				</select>
 			</div>

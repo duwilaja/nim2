@@ -91,7 +91,7 @@ include "inc.menutop.php";
 			</div>
 			<div class="form-group col-md-6">
 				<label>Sensor</label>
-				<select class="form-control selectpicker" id="sensor" name="sensor">
+				<select class="form-control " id="sensor" name="sensor">
 					<option value="">-</option>
 					<?php echo options($o_ssensor)?>
 				</select>
@@ -114,7 +114,7 @@ include "inc.menutop.php";
 			</div>
 			<div class="form-group col-md-6">
 				<label>Severity</label>
-				<select class="form-control selectpicker" id="severity" name="severity">
+				<select class="form-control " id="severity" name="severity">
 					<option value="">-</option>
 					<?php echo options($o_sseverity)?>
 				</select>
