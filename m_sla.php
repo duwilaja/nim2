@@ -34,7 +34,7 @@ include "inc.menutop.php";
 		</div>
 		<!--End Page header-->
 		
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title ?></div>
 						<div class="card-options ">
@@ -83,25 +83,25 @@ include "inc.menutop.php";
 <input type="hidden" name="cols" value="sla,sd,ed,st,et" />
 <input type="hidden" name="tname" value="core_sla" />
 		
-		  <div class="form-group">
+		  <div class="form-group mb-3">
 			<label>Description</label>
 			<input type="text" id="sla" name="sla" placeholder="..." class="form-control">
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 			<label>Start Day</label>
 				<select id="sd" name="sd" class="form-control ">
 					<?php echo options($o_days)?>
 				</select>
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-6 mb-3">
 				<label>End Day</label>
 				<select id="ed" name="ed" class="form-control ">
 					<?php echo options($o_days)?>
 				</select>
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label class="form-control-label">Start Time</label>
 				<div class="input-group">
@@ -109,7 +109,7 @@ include "inc.menutop.php";
 					<div class="input-group-append"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div>
 				</div>
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-6 mb-3">
 				<label class="form-control-label">End Time</label>
 				<div class="input-group">
 					<input type="text" id="et" name="et" placeholder="End Time" class="form-control timepicker">

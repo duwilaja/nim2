@@ -34,7 +34,7 @@ include "inc.menutop.php";
 		</div>
 		<!--End Page header-->
 		
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title ?></div>
 						<div class="card-options ">
@@ -84,7 +84,7 @@ include "inc.menutop.php";
 <input type="hidden" name="cols" value="sensor,name,net,mn,mx,severity" />
 <input type="hidden" name="tname" value="core_severity" />
 		
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Name</label>
 				<input type="text" id="name" name="name" placeholder="..." class="form-control">
@@ -97,7 +97,7 @@ include "inc.menutop.php";
 				</select>
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Min</label>
 				<input type="text" id="mn" name="mn" placeholder="..." class="form-control">
@@ -107,7 +107,7 @@ include "inc.menutop.php";
 				<input type="text" id="mx" name="mx" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Network</label>
 				<input type="text" id="net" name="net" placeholder="..." class="form-control">

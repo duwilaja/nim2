@@ -6,7 +6,7 @@
 				<!-- BEGIN menu -->
 				<div class="menu">
 					<div class="menu-header">Overview</div>
-					<div class="menu-item ">
+					<div class="menu-item <?php echo $cPage == 'home' ? 'active' : ''?>">
 						<a href="home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-cpu"></i></span>
 							<span class="menu-text">Dashboard View</span>

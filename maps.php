@@ -32,7 +32,7 @@ include "inc.menutop.php";
 			<!-- ROW OPEN -->
 			<div class="row">
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -54,7 +54,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -73,7 +73,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -92,7 +92,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -113,7 +113,7 @@ include "inc.menutop.php";
 
 			<div class="row">
 				<div class="col-12">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div id="map" style="height:450px; z-index: 1;"></div>
 						</div>

@@ -24,7 +24,7 @@
 			<div class="brand">
 				<a href="home<?php echo $ext?>" class="brand-logo">
 					<img src="hud/assets/img/logo-tni-menubar-1.png" alt="brand-logo" height="50"/>
-					<span class="brand-text">PROMISE</span>
+					<span class="brand-text">NMS</span>
 				</a>
 			</div>
 			<!-- END brand -->
@@ -36,7 +36,7 @@
 						<div class="menu-icon"><i class="bi bi-search nav-icon"></i></div>
 					</a>
 				</div>
-				<div class="menu-item dropdown dropdown-mobile-full">
+				<!-- <div class="menu-item dropdown dropdown-mobile-full">
 					<a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="menu-link">
 						<div class="menu-icon"><i class="bi bi-grid-3x3-gap nav-icon"></i></div>
 					</a>
@@ -162,7 +162,7 @@
 							<a href="#" class="text-decoration-none fw-bold">SEE ALL</a>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="menu-item dropdown dropdown-mobile-full">
 					<a href="#" data-bs-toggle="dropdown" data-bs-display="static" class="menu-link">
 						<div class="menu-img online">

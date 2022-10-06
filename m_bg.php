@@ -34,7 +34,7 @@ include "inc.menutop.php";
 		</div>
 		<!--End Page header-->
 		
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title ?></div>
 						<div class="card-options ">
@@ -85,7 +85,7 @@ include "inc.menutop.php";
 <input type="hidden" id="running" />
 <input type="hidden" name="startnow" id="startnow">
 					
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Name</label>
 				<input type="text" readonly id="name" name="name" placeholder="..." class="form-control">
@@ -96,7 +96,7 @@ include "inc.menutop.php";
 			</div>
 			
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Started At</label>
 				<input type="text" readonly id="startedat" name="startedat" placeholder="..." class="form-control">
