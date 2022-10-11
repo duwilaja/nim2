@@ -30,7 +30,7 @@ if(count($healths)>0){
 		$health=$healths[$i];
 		$name=$health->name;
 		$desc=$health->desc;
-		$lnk=base64_encode($endpoint.$name);
+		$lnk=urlencode(base64_encode($endpoint.$name));
 		//echo base64_decode($lnk);
 	?>
 		<div class="col-lg-6 text-center center">

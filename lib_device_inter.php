@@ -28,7 +28,7 @@ if(count($ports)>0){
 		$desc=$port['ifDescr'];
 		$isdescr=$name==""?"?ifDescr=true":"";
 		$name=$name==""?$desc:$name;
-		$lnk=base64_encode($endpoint.$name.'/port_bits'.$isdescr);
+		$lnk=urlencode(base64_encode($endpoint.$name.'/port_bits'.$isdescr));
 		//echo base64_decode($lnk);
 	?>
 		<div class="col-lg-6 text-center center">

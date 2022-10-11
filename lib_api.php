@@ -4,7 +4,7 @@ $redirect=false;
 include "inc.common.php";
 include "inc.session.php";
 
-$lnk=base64_decode($_GET['lnk']);
+$lnk=base64_decode(urldecode($_GET['lnk']));
 $lib_url.=$lnk;
 
 //echo $lib_url;
