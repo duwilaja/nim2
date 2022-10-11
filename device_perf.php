@@ -34,6 +34,9 @@ if(count($node)>0){
 	<div class="col-lg-6"><a href="JavaScript:;" data-fancybox="" data-type="iframe" data-src="device_graph<?php echo $ext?>?graph=rtt&h=<?php echo $host?>">
 	<img src="<?php echo $cgi_url?>/cgi-bin/rtt.sh?h=<?php echo $host?>&b=<?php echo $dari?>&e=<?php echo $sampai?>">
 	</a></div>
+</div>
+<br />
+<div class="row">
 	<div class="col-lg-6"><a href="JavaScript:;" data-fancybox="" data-type="iframe" data-src="device_graph<?php echo $ext?>?graph=jitter&h=<?php echo $host?>">
 	<img src="<?php echo $cgi_url?>/cgi-bin/mdev.sh?h=<?php echo $host?>&b=<?php echo $dari?>&e=<?php echo $sampai?>">
 	</a></div>

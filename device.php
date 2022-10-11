@@ -37,7 +37,7 @@ include "inc.head.php";
 									
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card mb-3">
 									<div class="card-header">
 										<div class="card-title">Info</div>
 										<div class="card-options ">
@@ -66,7 +66,7 @@ include "inc.head.php";
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card mb-3">
 									<div class="card-header">
 										<div class="card-title">Status</div>
 										<div class="card-options ">
@@ -119,7 +119,7 @@ include "inc.head.php";
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card mb-3">
 									<div class="card-header">
 										<div class="card-title">Performance</div>
 										<div class="card-options ">
