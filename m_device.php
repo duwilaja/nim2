@@ -18,8 +18,16 @@ include "inc.menutop.php";
 
 include "inc.db.php";
 $conn=connect();
+$rs=exec_qry($conn,"select locid,name from core_location order by name");
+$o_loc=fetch_all($rs);
 $rs=exec_qry($conn,"select rowid,sla from core_sla order by sla");
 $o_sla=fetch_all($rs);
+$rs=exec_qry($conn,"select val,txt from core_lov where typ='group' order by txt");
+$o_grp=fetch_all($rs);
+$rs=exec_qry($conn,"select val,txt from core_lov where typ='devicetype' order by txt");
+$o_typ=fetch_all($rs);
+$rs=exec_qry($conn,"select val,txt from core_lov where typ='network' order by txt");
+$o_net=fetch_all($rs);
 disconnect($conn);
 
 ?>
@@ -106,27 +114,42 @@ disconnect($conn);
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Location</label>
-				<input type="text" id="loc" name="loc" placeholder="..." class="form-control">
+				<select class="form-control " id="loc" name="loc">
+					<option value="">-</option>
+					<?php echo options($o_loc)?>
+				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label>Group</label>
-				<input type="text" id="grp" name="grp" placeholder="..." class="form-control">
+				<select class="form-control " id="grp" name="grp">
+					<option value="">-</option>
+					<?php echo options($o_grp)?>
+				</select>
 			</div>
 		  </div>
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Type</label>
-				<input type="text" id="typ" name="typ" placeholder="..." class="form-control">
+				<select class="form-control " id="typ" name="typ">
+					<option value="">-</option>
+					<?php echo options($o_typ)?>
+				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label>Network</label>
-				<input type="text" id="net" name="net" placeholder="..." class="form-control">
+				<select class="form-control " id="net" name="net">
+					<option value="">-</option>
+					<?php echo options($o_net)?>
+				</select>
 			</div>
 		  </div>
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>SNMP Monitor</label>
-				<input type="text" id="snmp" name="snmp" placeholder="..." class="form-control">
+				<select class="form-control " id="snmp" name="snmp">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label>SNMP Community</label>
@@ -136,7 +159,11 @@ disconnect($conn);
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>SNMP Version</label>
-				<input type="text" id="snmp_ver" name="snmp_ver" placeholder="..." class="form-control">
+				<select class="form-control " id="snmp_ver" name="snmp_ver">
+					<option value=""></option>
+					<option value="v2c">v2c</option>
+					<option value="v1">v1</option>
+				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label>SLA</label>
@@ -146,7 +173,7 @@ disconnect($conn);
 				</select>
 			</div>
 		  </div>
-		  <div class="row mb-3">
+		  <div class="row mb-3 hidden">
 			<div class="form-group col-md-6">
 				<label>SNMP Discovery</label>
 				<input type="text" readonly id="snmpdiscover" name="snmpdiscover" placeholder="..." class="form-control">

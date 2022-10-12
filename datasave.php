@@ -95,6 +95,10 @@ if($mn=='mtopo'){
 	$res=crud($conn);
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
+if($mn=='mlov'){
+	$res=crud($conn);
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
 
 if($mn=='ip'){
 	$name=post('name');

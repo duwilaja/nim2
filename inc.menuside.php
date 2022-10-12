@@ -142,6 +142,18 @@
 							<span class="menu-caret"><b class="caret"></b></span>
 						</a>
 						<div class="menu-submenu">
+							<?php if($s_LVL==0){?>
+							<div class="menu-item">
+								<a href="m_lov<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">LoV</span>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="m_user<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">User</span>
+								</a>
+							</div>
+							<?php }?>
 							<div class="menu-item">
 								<a href="m_device<?php echo $ext?>" class="menu-link">
 									<span class="menu-text">Devices</span>
