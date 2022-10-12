@@ -34,7 +34,7 @@ include "inc.menutop.php";
 		</div>
 		<!--End Page header-->
 		
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title?></div>
 						<div class="card-options ">
@@ -83,7 +83,7 @@ include "inc.menutop.php";
 <input type="hidden" name="cols" value="locid,name,addr,city,prov,postal,area,lat,lng" />
 <input type="hidden" name="tname" value="core_location" />
 		
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>ID</label>
 				<input type="text" id="locid" name="locid" placeholder="..." class="form-control">
@@ -93,11 +93,11 @@ include "inc.menutop.php";
 				<input type="text" id="name" name="name" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="form-group">
+		  <div class="form-group mb-3">
 			<label>Address</label>
 			<input type="text" id="addr" name="addr" placeholder="..." class="form-control">
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>City</label>
 				<input type="text" id="city" name="city" placeholder="..." class="form-control">
@@ -107,7 +107,7 @@ include "inc.menutop.php";
 				<input type="text" id="prov" name="prov" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Postal Code</label>
 				<input type="text" id="postal" name="postal" placeholder="..." class="form-control">
@@ -117,12 +117,12 @@ include "inc.menutop.php";
 				<input type="text" id="area" name="area" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Latitude</label>
 				<input type="text" id="lat" name="lat" placeholder="..." class="form-control">
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-6 mb-3">
 				<label>Longitude</label>
 				<input type="text" id="lng" name="lng" placeholder="..." class="form-control">
 			</div>

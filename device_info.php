@@ -23,7 +23,42 @@ disconnect($conn);
 if(count($node)>0){
 ?>
 <div class="row">
+		<div class="col-xl-12">
+			<dl class="row mb-0">
+                <dt class="col-sm-2">Host</dt>
+                <dd class="col-sm-9"><?php echo $node['host']?></dd>
+                            
+                <dt class="col-sm-2">Name</dt>
+                <dd class="col-sm-9"><?php echo $node['name']?></dd>
+
+                <dt class="col-sm-2">Network</dt>
+                <dd class="col-sm-9"><?php echo $node['net']?></dd>
+
+                <dt class="col-sm-2">Type</dt>
+                <dd class="col-sm-9"><?php echo $node['typ']?></dd>
+
+                <dt class="col-sm-2">Group</dt>
+                <dd class="col-sm-9"><?php echo $node['grp']?></dd>
+
+                <dt class="col-sm-2">Location</dt>
+                <dd class="col-sm-9"><?php echo $node['loc']?></dd>
+            </dl>
+        </div>
+		<?php if(count($location)>0){?>
 	<div class="col-lg-3">
+	<b>Name : </b><?php echo $location['name']?>
+	</div>
+	<div class="col-lg-3">
+	<b>Addr : </b><?php echo $location['addr']?>
+	</div>
+	<div class="col-lg-2">
+	<b>City : </b><?php echo $location['city']?>
+	</div>
+	<div class="col-lg-2">
+	<b>Province : </b><?php echo $location['prov']?>
+	</div>
+<?php }?>
+	<!-- <div class="col-lg-3">
 	<b>Host : </b><?php echo $node['host']?>
 	</div>
 	<div class="col-lg-3">
@@ -37,10 +72,10 @@ if(count($node)>0){
 	</div>
 	<div class="col-lg-2">
 	<b>Group : </b><?php echo $node['grp']?>
-	</div>
+	</div> -->
 </div>
 <br />
-<div class="row">
+<!-- <div class="row">
 	<div class="col-lg-2">
 	<b>Location : </b><?php echo $node['loc']?>
 	</div>
@@ -58,5 +93,5 @@ if(count($node)>0){
 	<b>Province : </b><?php echo $location['prov']?>
 	</div>
 <?php }?>
-</div>
+</div> -->
 <?php }else{ echo "Record not found"; }?>

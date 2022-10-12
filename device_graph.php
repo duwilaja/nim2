@@ -36,7 +36,7 @@ include "inc.head.php";
 
 						</div>
 						<!--End Page header-->
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-body">
 						<div class="row">
 							<div class="input-group col-md-2">
@@ -59,7 +59,7 @@ include "inc.head.php";
 				
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card mb-3">
 									<div class="card-header">
 										<div class="card-title"><?php echo $title?></div>
 										<div class="card-options ">

@@ -43,7 +43,7 @@ if(count($o_severity)>0){
 			</div-->
 		</div>
 		<!--End Page header-->
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-body">
 						<div class="row">
 							<select class="form-control selectpicker col-md-3" id="severity" name="severity">
@@ -60,7 +60,7 @@ if(count($o_severity)>0){
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title?></div>
 						<div class="card-options ">

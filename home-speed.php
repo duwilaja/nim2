@@ -24,7 +24,26 @@ disconnect($conn);
 for($i=0;$i<count($lists);$i++){
 	$list=$lists[$i];
 ?>
-	<div class="list-group-item d-flex  align-items-center">
+
+
+
+											<div class="list-group-item d-flex align-items-center">
+												<div class="flex-1 text-break">
+													<div><?php echo $list[1]?></div>
+													<div class="text-white text-opacity-50 d-flex align-items-center">
+														<i class="fa fa-circle fs-8px fa-fw text-danger me-1"></i> <?php echo $list[0]?>
+													</div>
+												</div>
+												<div>
+												<span class="badge border border-danger text-danger px-2 pt-5px pb-5px rounded fs-10px d-inline-flex align-items-center"><i class="fa fa-circle fs-9px fa-fw me-5px"></i> <?php echo $list[2]?> ms</span>
+												</div>
+											</div>
+
+							
+
+							
+
+	 <!-- <div class="list-group-item d-flex  align-items-center">
 		<div class="col-auto align-self-center pl-0">
 			<div class="feature mt-0 mb-0">
 				<i class="fe fe-cpu project bg-secondary-transparent text-secondary "></i>
@@ -37,7 +56,7 @@ for($i=0;$i<count($lists);$i++){
 		<div class="ml-auto">
 			<div class=" h6 mb-0"><?php echo $list[2]?> ms</div>
 		</div>
-	</div>
+	</div>  -->
 <?php
 }
 ?>
