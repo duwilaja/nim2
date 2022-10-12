@@ -1,26 +1,27 @@
 <?php 
-$restrict_lvl=array("0");
+$restrict_lvl=array("0","1");
 
 include "inc.common.php";
 include "inc.session.php";
 
 $page_icon="fa fa-table";
-$page_title="User";
-$modal_title="User";
+$page_title="List of Value";
+$modal_title="LoV";
 $card_title="Master $page_title";
 
-$menu="user";
+$menu="mlov";
 
 $breadcrumb="Setup/$page_title";
 
+$o_lovtyp=[
+	["group","Group"],
+	["network","Network"],
+	["devicetype","Device Type"]
+];
+
+
 include "inc.head.php";
 include "inc.menutop.php";
-
-include "inc.db.php";
-$conn=connect();
-$rs=exec_qry($conn,"select val,txt from core_lov where typ='group' order by txt");
-$o_grp=fetch_all($rs);
-disconnect($conn);
 
 ?>
 
@@ -43,10 +44,10 @@ disconnect($conn);
 		
 				<div class="card">
 					<div class="card-header">
-						<div class="card-title"><?php echo $card_title ?></div>
+						<div class="card-title"><?php echo $card_title?></div>
 						<div class="card-options ">
-							<!--a href="#" title="Batch" class=""><i class="fe fe-upload"></i></a-->
-							<a href="#" onclick="openForm(0);" data-toggle="modal" data-target="#myModal" title="Add" class=""><i class="fe fe-plus"></i></a>
+							<!--a href="#" onclick="$('#datas').val('');" data-toggle="modal" data-target="#modal_batch" title="Batch" class=""><i class="fe fe-upload"></i></a>
+							--><a href="#" onclick="openForm(0);" data-toggle="modal" data-target="#myModal" title="Add" class=""><i class="fe fe-plus"></i></a>
 							<a href="#" title="Expand/Collapse" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
 							<!--a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a-->
 						</div>
@@ -56,10 +57,9 @@ disconnect($conn);
 							<table id="mytbl" class="table table-striped table-bordered w-100">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Level</th>
-										<th>Group</th>
+										<th>Type</th>
+										<th>Text</th>
+										<th>Value</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -86,41 +86,31 @@ disconnect($conn);
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="uid,uname,ulvl,ugrp" />
-<input type="hidden" name="tname" value="core_user" />
+<input type="hidden" name="cols" value="typ,txt,val" />
+<input type="hidden" name="tname" value="core_lov" />
 		
 		  <div class="row">
-			<div class="form-group col-md-6">
-				<label>ID</label>
-				<input type="text" id="uid" name="uid" placeholder="..." class="form-control">
-			</div>
-			<div class="form-group col-md-6">
-				<label>Name</label>
-				<input type="text" id="uname" name="uname" placeholder="..." class="form-control">
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="form-group col-md-6">
-				<label>Level</label>
-				<select class="form-control " id="ulvl" name="ulvl">
+			<div class="form-group col-md-12">
+				<label>Type</label>
+				<select class="form-control " id="typ" name="typ">
 					<option value="">-</option>
-					<?php echo options($o_ulvl)?>
-				</select>
-			</div>
-			<div class="form-group col-md-6">
-				<label>Group</label>
-				<select class="form-control " id="ugrp" name="ugrp">
-					<option value=""></option>
-					<?php echo options($o_grp)?>
+					<?php echo options($o_lovtyp)?>
 				</select>
 			</div>
 		  </div>
 		  <div class="row">
-			<div class="form-group col-md-6">
-				<label>Set Password</label>
-				<input type="password" id="pwd" name="pwd" placeholder="..." class="form-control">
+			<div class="form-group col-md-12">
+				<label>Text</label>
+				<input type="text" id="txt" name="txt" placeholder="..." class="form-control">
 			</div>
 		  </div>
+		  <div class="row">
+			<div class="form-group col-md-12">
+				<label>Value</label>
+				<input type="text" id="val" name="val" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  
 		</form>
 	  </div>
 	  <div class="modal-footer">
@@ -133,13 +123,55 @@ disconnect($conn);
   </div>
 </div>
 
+<!-- Modal Batch -->
+<div class="modal fade modal_form" id="modal_batch" tabindex="-1" role="dialog" aria-labelledby="formModalLabelBatch" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="formModalLabelBatch">Batch <?php echo $modal_title ?></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<!--div class="card"-->
+					<form class="form-horizontal" id="myfx">
+					<input type="hidden" name="rowid" id="rowid" value="0">
+					<input type="hidden" name="mnu" value="<?php echo $menu?>_batch">
+					<input type="hidden" id="svx" name="sv" />
+					<input type="hidden" name="cols" value="" />
+					<input type="hidden" name="tname" value="core_netdiagram" />
+					
+						<!--div class="card-body"-->
+							<div class="form-group">
+								<label class=""><b>Data :</b><br /> - Copy paste from spreadsheet<br /> - 1st row always header field<br /> -  need sample? click <a target="_blank" style="text-decoration:underline;" href="sample_topology.xlsx">here</a></label>
+								<div class="">
+									<textarea class="form-control" name="datas" rows="10" id="datas" placeholder="....."></textarea>
+								</div>
+							</div>
+							
+						<!--/div-->
+					</form>
+				<!--/div-->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" onclick="$('#svx').val('DEL');saveData('#myfx');">Delete</button>
+				<button type="button" class="btn btn-warning" onclick="$('#svx').val('UPD');saveData('#myfx');">Update</button>
+				<button type="button" class="btn btn-success" onclick="$('#svx').val('NEW');saveData('#myfx');">Insert</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Modal Batch -->
+
 <?php 
 include "inc.foot.php";
 include "inc.js.php";
 
-$tname="core_user";
-$cols="uid,uname,ulvl,ugrp,rowid";
-$csrc="uid,uname";
+$tname="core_lov";
+$cols="typ,txt,val,rowid";
+$csrc="typ";
 
 ?>
 
@@ -170,29 +202,17 @@ $(document).ready(function(){
 	jvalidate = $("#myf").validate({
     ignore: ":hidden:not(.selectpicker)",
 	rules :{
-        "uid" : {
+        "typ" : {
             required : true
         },
-		"uname" : {
+		"txt" : {
 			required : true
-		},
-		"ulvl" : {
-			required : true
-		},
-		"pwd" : {
-			required : function(){
-				if($("#rowid").val()=="0"){
-					return true;
-				}else{
-					return false;
-				}
-			}
 		}
     }});
 	
 	//datepicker();
 	//timepicker();
-	selectpicker(true);
+	//selectpicker(true);
 });
 
 function reloadtbl(){

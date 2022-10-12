@@ -115,8 +115,7 @@ include "inc.menutop.php";
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body">
-							<div id="map" style="height:450px; z-index: 1; display:none;"></div>
-							<img width="" src="img/peta.svg" />
+							<div id="map" style="height:450px; z-index: 1;"></div>
 						</div>
 					</div>
 				</div>
@@ -150,7 +149,7 @@ $(document).ready(function(){
 	displayClock();
 	
 	getData('onoff','maps-onoff');
-	//widget_map();
+	widget_map();
 	
 });
 
