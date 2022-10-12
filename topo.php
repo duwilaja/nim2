@@ -147,7 +147,7 @@ function draw(){
         nodes: nodes,
         edges: edges
       };
-      var options = {interaction:{hover:true}};
+      var options = {interaction:{hover:true}, nodes:{font:{color: "#ffffff"}}, edges:{color: "#ffffff"}};
       network = new vis.Network(container, data, options);
 	  network.on("click", function (params) {
 			//params.event = "[original event]";
