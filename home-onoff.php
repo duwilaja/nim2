@@ -52,9 +52,9 @@ disconnect($conn);
 
 //echo json_encode(($yearweeks));
 
-$all_perc=compare($y_all,$all,")</span>",false);
-$on_perc=compare($y_on,$on,")</span>",false);
-$off_perc=compare($y_off,$off,")</span>",false);
+$all_perc=compare($all,$all,")</span>",false);
+$on_perc=compare($all,$on,")</span>",false);
+$off_perc=compare($all,$off,")</span>",false);
 
 $all_class=compare_class($all,$all,'<span class="text-success fs-13 ml-2">(','<span class="text-success fs-13 ml-2">(','<span class="text-success fs-13 ml-2">(');
 $on_class=compare_class($all,$on,'<span class="text-success fs-13 ml-2">(','<span class="text-success fs-13 ml-2">(','<span class="text-danger fs-13 ml-2">(');
