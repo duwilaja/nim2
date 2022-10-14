@@ -18,5 +18,5 @@ $lnk=base64_decode(urldecode($lnk));
 $ttd=strpos($lnk,"?")===false?"?":"&";
 $lnk=urlencode(base64_encode($lnk.$ttd."from=$b&to=$e"));
 
-echo '<img width="100%" src="lib_api'.$ext.'?lnk='.$lnk.'">';
+echo '<img style="background:white;" width="100%" src="lib_api'.$ext.'?lnk='.$lnk.'">';
 ?>
