@@ -113,7 +113,7 @@ include "inc.menutop.php";
 		
 			<!--Row-->
 			<div class="row">
-				<div class="col-xl-6 col-md-12 col-lg-12">
+				<div class="col-xl-7 col-md-12 col-lg-12">
 					<div class="card mb-3">
 						<div class="card-header">
 							<!-- BEGIN title -->
@@ -161,7 +161,7 @@ include "inc.menutop.php";
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-6 col-md-12 col-lg-12">
+				<div class="col-xl-5 col-md-12 col-lg-12">
 					<div class="card mb-3">
 						<div class="card-header">
 							<!-- BEGIN title -->

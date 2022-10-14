@@ -28,7 +28,48 @@ var dataku=<?php  echo json_encode($lists)?>;
 function randomColor(){
 	return "#"+(Math.random().toString(16)+"000000").slice(2, 8).toUpperCase();
 }
-pie_chart("pie-loc",dataku);
+//pie_chart("pie-loc",dataku);
+
+var datas=[];
+var label=[];
+var color=[];
+var col=randomColor();
+
+for(var i=0;i<dataku.length;i++){
+	datas.push(dataku[i][1]);
+	label.push(dataku[i][0]);
+	color.push(col);
+}
+
+var data = {
+  labels: label,
+  datasets: [{
+    label: 'Total Device',
+    data: datas,
+    backgroundColor: color,
+    borderWidth: 1
+  }]
+};
+
+const config = {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+};
+
+function bar(){
+const ctx = document.getElementById('pie-loc').getContext('2d');
+const cart = new Chart(ctx, config);
+}
+
+bar();
+
 function pie_chart(canvas,data,colors=[]){
 	//-------------
   //- PIE CHART -
