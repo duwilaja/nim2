@@ -101,7 +101,7 @@ disconnect($conn);
 <input type="hidden" name="cols" value="host,name,loc,grp,typ,net,snmp,snmp_community,snmp_ver,sla" />
 <input type="hidden" name="tname" value="core_node" />
 		
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Host</label>
 				<input type="text" id="host" name="host" placeholder="..." class="form-control">
@@ -111,7 +111,7 @@ disconnect($conn);
 				<input type="text" id="name" name="name" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Location</label>
 				<select class="form-control " id="loc" name="loc">
@@ -127,7 +127,7 @@ disconnect($conn);
 				</select>
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>Type</label>
 				<select class="form-control " id="typ" name="typ">
@@ -143,7 +143,7 @@ disconnect($conn);
 				</select>
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>SNMP Monitor</label>
 				<select class="form-control " id="snmp" name="snmp">
@@ -156,7 +156,7 @@ disconnect($conn);
 				<input type="text" id="snmp_community" name="snmp_community" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-6">
 				<label>SNMP Version</label>
 				<select class="form-control " id="snmp_ver" name="snmp_ver">
@@ -173,7 +173,7 @@ disconnect($conn);
 				</select>
 			</div>
 		  </div>
-		  <div class="row hidden">
+		  <div class="row mb-3 hidden">
 			<div class="form-group col-md-6">
 				<label>SNMP Discovery</label>
 				<input type="text" readonly id="snmpdiscover" name="snmpdiscover" placeholder="..." class="form-control">

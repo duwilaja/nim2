@@ -31,7 +31,7 @@ include "inc.menutop.php";
 			<!-- ROW OPEN -->
 			<div class="row">
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -53,7 +53,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -72,7 +72,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -91,7 +91,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -114,9 +114,14 @@ include "inc.menutop.php";
 			<!--Row-->
 			<div class="row">
 				<div class="col-xl-7 col-md-12 col-lg-12">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-header">
-							<h3 class="card-title">Regional Device</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">REGIONAL DEVICE</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-100 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 						</div>
 						<div class="card-body">
 							<div class="row">
@@ -131,7 +136,7 @@ include "inc.menutop.php";
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-12">
-									<h3 class="font-weight-semibold"><span class="tdev">0</span> <span class="text-muted fs-12">all device</span></h3>
+									<h4 class="font-weight-semibold"><span class="tdev">0</span> <span class="text-muted fw-light fs-12">all device</span></h4>
 									<div class="table-responsive text-muted" style="max-height: 260px;">
 										<table class="table text-nowrap border-0 mb-0 ">
 											<tbody id="isi-propinsi">
@@ -157,9 +162,14 @@ include "inc.menutop.php";
 					</div>
 				</div>
 				<div class="col-xl-5 col-md-12 col-lg-12">
-					<div class="card overflow-hidden">
+					<div class="card mb-3">
 						<div class="card-header">
-							<h3 class="card-title">Slowest RTT</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">SLOWEST RTT</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 						</div>
 						<div class="card-body p-0">
 							<div id="isi-speed"></div>
@@ -187,9 +197,14 @@ include "inc.menutop.php";
 			<!--Row-->
 			<div class="row">
 				<div class="col-xl-5 col-md-12 col-lg-5">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-header">
-							<h3 class="card-title mb-0">Current Alert</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">CURRENT ALERT</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 						</div>
 						<div class="card-body">
 							<div class="row" id="isi-alert"></div>
@@ -208,12 +223,13 @@ include "inc.menutop.php";
 							</div>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="">
 								<h5>Total Critical</h5>
 							</div>
-							<h2 class="mb-2 font-weight-semibold"><span id="critthismonth">0</span><span class="sparkline_bar31 float-right"></span></h2>
+							<h2 class="mb-2 font-weight-semibold"><span id="critthismonth">0</span>
+							<span class="sparkline_bar31 float-right"></span></h2>
 							<div class="text-muted mb-0">
 								<i class="critsign"></i>
 								<span id="critcompare">-</span>
@@ -222,23 +238,31 @@ include "inc.menutop.php";
 					</div>
 				</div>
 				<div class="col-xl-7 col-md-12 col-lg-7">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-header">
-							<h3 class="card-title">Weekly Alert</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">WEEKLY ALERT</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 						</div>
 						<div class="card-body">
 							<div class="row">
-								<div class="col-xl-4 col-lg-4 col-md-12 mb-5">
+								<div class="col-xl-4 col-lg-4 col-md-12 mb-3">
 									<p class=" mb-0 "> Critical</p>
-									<h2 class="mb-0 font-weight-semibold"><span id="critthisweek">0</span><span id="critlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span></h2>
+									<h2 class="mb-0 font-weight-semibold"><span id="critthisweek">0</span></h2>
+									<span id="critlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span></h2>
 								</div>
-								<div class="col-xl-4 col-lg-4 col-md-12 mb-5">
+								<div class="col-xl-4 col-lg-4 col-md-12 mb-3">
 									<p class=" mb-0 "> Major </p>
-									<h2 class="mb-0 font-weight-semibold"><span id="majorthisweek">0</span><span id="majorlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span></h2>
+									<h2 class="mb-0 font-weight-semibold"><span id="majorthisweek">0</span></h2>
+									<span id="majorlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span>
 								</div>
-								<div class="col-xl-4 col-lg-4 col-md-12 mb-5">
+								<div class="col-xl-4 col-lg-4 col-md-12 mb-3">
 									<p class=" mb-0 "> Minor</p>
-									<h2 class="mb-0 font-weight-semibold"><span id="minorthisweek">0</span><span id="minorlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span></h2>
+									<h2 class="mb-0 font-weight-semibold"><span id="minorthisweek">0</span></h2>
+									<span id="minorlastweek" class="fs-12 text-muted"><span class="text-success mr-1"> 0%</span>last week</span>
 								</div>
 							</div>
 							<div class="chart-wrapper">
@@ -267,9 +291,14 @@ include "inc.menutop.php";
 			<!--Row-->
 			<div class="row">
 				<div class="col-xl-8 col-md-12 col-lg-7">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-header">
-							<h3 class="card-title">SLA</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">SLA</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 						</div>
 						<div class="card-body overflow-hidden">
 							<!--div id="flotContainer2" class="chart-style"></div-->
@@ -289,27 +318,39 @@ include "inc.menutop.php";
 								</div>
 							</div>
 						</div>
-						<div class="card-footer p-5">
+						<div class="card-footer p-4">
 							<div class="row ">
 								<div class="col-xl-4 col-lg-4 col-md-12">
-									<h6 class=" mb-0 ">OverAll Device</h6>
-									<h2 class="mb-0"><span class="font-weight-semibold sla_all">0</span>%<span class="fs-12 text-muted sla_all_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span></h2>
-									<div class="progress progress-xs mt-3 h-1 sla_all_progress">
+									<h6 class=" mb-2 fw-light">OverAll Device</h6>
+									<h2 class="mb-0"><span class="fw-bold sla_all">0</span>%</h2>
+									<span class="fs-12 text-muted sla_all_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span>
+									<!-- <div class="progress progress-xs mt-3 h-1 sla_all_progress">
 										<div class="progress-bar bg-primary w-0 " role="progressbar"></div>
+									</div> -->
+									<div class="progress h-5px bg-white-transparent-2 mt-2 sla_all_progress">
+										<div class="progress-bar bg-success" role="progressbar"></div>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-12  mt-5 mt-xl-0 mt-lg-0">
-									<h6 class=" mb-0 ">Online Device</h6>
-									<h2 class="mb-0"><span class="font-weight-semibold sla_on">0</span>%<span class="fs-12 text-muted sla_on_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span></h2>
-									<div class="progress progress-xs mt-3 h-1 sla_on_progress">
+									<h6 class=" mb-2 fw-light">Online Device</h6>
+									<h2 class="mb-0"><span class="font-weight-semibold sla_on">0</span>%</h2>
+									<span class="fs-12 text-muted sla_on_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span>
+									<!-- <div class="progress progress-xs mt-3 h-1 sla_on_progress">
 										<div class="progress-bar bg-success w-0 " role="progressbar"></div>
+									</div> -->
+									<div class="progress h-5px bg-white-transparent-2 mt-2 sla_on_progress">
+										<div class="progress-bar bg-theme" role="progressbar"></div>
 									</div>
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-12  mt-5 mt-xl-0 mt-lg-0">
-									<h6 class=" mb-0 ">Offline Device</h6>
-									<h2 class="mb-0"><span class="font-weight-semibold sla_off">0</span><span class="fs-12 text-muted sla_off_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span></h2>
-									<div class="progress progress-xs mt-3 h-1 sla_off_progress">
+									<h6 class=" mb-2 fw-light">Offline Device</h6>
+									<h2 class="mb-0"><span class="font-weight-semibold sla_off">0</span></h2>
+									<span class="fs-12 text-muted sla_off_perc"><span class="text-success mr-1"> 0%</span> vs yesterday</span>
+									<!-- <div class="progress progress-xs mt-3 h-1 sla_off_progress">
 										<div class="progress-bar bg-danger w-0 " role="progressbar"></div>
+									</div> -->
+									<div class="progress h-5px bg-white-transparent-2 mt-2 sla_off_progress">
+										<div class="progress-bar bg-danger" role="progressbar"></div>
 									</div>
 								</div>
 							</div>
@@ -317,20 +358,22 @@ include "inc.menutop.php";
 					</div>
 				</div>
 				<div class="col-xl-4 col-md-12 col-lg-5">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-header pt-2 pb-0 border-bottom-0">
-							<h3 class="card-title">Best Device Performance</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-4">
+								<span class="flex-grow-1">BEST DEVICE PERFORMANCE</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-100 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 							<div class="card-options">
-								<div class="feature text-center ">
-									<i class="fe fe-trending-up border-radius-4 primary mt-3 mr-3 text-white fa-stack services "></i>
-								</div>
 							</div>
 						</div>
 						<div class="card-body pt-0">
 							<h2 class="mb-1 number-font"><span class="counter font-weight-semibold sla_max">0%</span></h2>
 							<div class="d-flex">
 								<small class="mb-0 number-font1 sla_max_perc"><span class="text-success">0%</span></small>
-								<small class="text-muted ml-2 fs-12"> vs Yesterday</small>
+								<small class="text-muted ml-2 fs-12"> &nbsp vs Yesterday</small>
 							</div>
 							<div class="row mt-3 dash1">
 								<div class="col  border-right">
@@ -348,20 +391,22 @@ include "inc.menutop.php";
 							</div>
 						</div>
 					</div>
-					<div class="card">
+					<div class="card ">
 						<div class="card-header pt-2 pb-0 border-bottom-0">
-							<h3 class="card-title">Worst Device Performance</h3>
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small mb-4">
+								<span class="flex-grow-1">WORST DEVICE PERFORMANCE</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-100 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
 							<div class="card-options">
-								<div class="feature text-center ">
-									<i class="fe fe-trending-down border-radius-4 danger mt-3 mr-3 text-white fa-stack services "></i>
-								</div>
 							</div>
 						</div>
 						<div class="card-body pt-0">
 							<h2 class="mb-1 number-font"><span class="counter font-weight-semibold sla_min">0%</span></h2>
 							<div class="d-flex">
 								<small class="mb-0 number-font1 sla_min_perc"><span class="text-success">0%</span></small>
-								<small class="text-muted ml-2 fs-12"> vs Yesterday</small>
+								<small class="text-muted ml-2 fs-12"> &nbsp vs Yesterday</small>
 							</div>
 							<div class="row mt-3 dash1">
 								<div class="col  border-right">
@@ -391,25 +436,26 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 ?>
+		
 		<!-- ECharts js-->
-		<script src="aronox/assets/plugins/echarts/echarts.js"></script>
+		<!-- <script src="aronox/assets/plugins/echarts/echarts.js"></script> -->
 		<!--Morris Charts js -->
-		<script src="aronox/assets/plugins/morris/raphael-min.js"></script>
-		<script src="aronox/assets/plugins/morris/morris.js"></script>
+		<!-- <script src="aronox/assets/plugins/morris/raphael-min.js"></script>
+		<script src="aronox/assets/plugins/morris/morris.js"></script> -->
 		<!-- Flot Charts js-->
-		<script src="aronox/assets/plugins/flot/jquery.flot.js"></script>
+		<!-- <script src="aronox/assets/plugins/flot/jquery.flot.js"></script>
 		<script src="aronox/assets/plugins/flot/jquery.flot.fillbetween.js"></script>
-		<script src="aronox/assets/plugins/flot/jquery.flot.pie.js"></script>
+		<script src="aronox/assets/plugins/flot/jquery.flot.pie.js"></script> -->
 		<!-- Vector js -->
-		<script src="aronox/assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+		<!-- <script src="aronox/assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
         <script src="aronox/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-		<script src="aronox/assets/js/vectormap.js"></script>
+		<script src="aronox/assets/js/vectormap.js"></script> -->
 		
 		<!-- Peitychart init demo js-->
-		<script src="aronox/assets/plugins/peitychart/peitychart.init.js"></script>
+		<!-- <script src="aronox/assets/plugins/peitychart/peitychart.init.js"></script> -->
 		
 		<!-- Apexchart js-->
-		<script src="aronox/assets/js/apexcharts.js"></script>
+		<!-- <script src="aronox/assets/js/apexcharts.js"></script> -->
 		
 		<!-- Index js-->
 		<!--script src="aronox/assets/js/index4.js"></script>

@@ -34,7 +34,7 @@ include "inc.menutop.php";
 		</div>
 		<!--End Page header-->
 		
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title?></div>
 						<div class="card-options ">
@@ -81,13 +81,13 @@ include "inc.menutop.php";
 <input type="hidden" name="cols" value="rowid,dari,ke" />
 <input type="hidden" name="tname" value="core_netdiagram" />
 		
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-12">
 				<label>From</label>
 				<input type="text" id="dari" name="dari" placeholder="..." class="form-control">
 			</div>
 		  </div>
-		  <div class="row">
+		  <div class="row mb-3">
 			<div class="form-group col-md-12">
 				<label>To</label>
 				<input type="text" id="ke" name="ke" placeholder="..." class="form-control">

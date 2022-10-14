@@ -34,7 +34,7 @@ include "inc.db.php";
 			</div-->
 		</div>
 		<!--End Page header-->
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-body">
 						<div class="row">
 							<div class="input-group col-md-2">
@@ -52,7 +52,7 @@ include "inc.db.php";
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				<div class="card mb-3">
 					<div class="card-header">
 						<div class="card-title"><?php echo $card_title?></div>
 						<div class="card-options ">
