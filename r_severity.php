@@ -16,7 +16,7 @@ include "inc.menutop.php";
 
 include "inc.db.php";
 $conn=connect();
-$rs=exec_qry($conn,"select concat(sensor,'|',mn,'|',mx,'|',severity) as val, name from core_severity order by name");
+$rs=exec_qry($conn,"select concat(sensor,'|',mn,'|',mx,'|',severity,'|',net) as val, name from core_severity order by name");
 $o_severity=fetch_all($rs);
 disconnect($conn);
 
@@ -46,7 +46,7 @@ if(count($o_severity)>0){
 				<div class="card mb-3">
 					<div class="card-body">
 						<div class="row">
-							<select class="form-control selectpicker col-md-3" id="severity" name="severity">
+							<select class="form-control col-md-3" id="severity" name="severity">
 								<?php echo options($o_severity)?>
 							</select>
 							&nbsp;&nbsp;&nbsp;
@@ -57,6 +57,7 @@ if(count($o_severity)>0){
 							<input type="hidden" id="min" value="<?php echo $svr[1]?>">
 							<input type="hidden" id="max" value="<?php echo $svr[2]?>">
 							<input type="hidden" id="svr" value="<?php echo $svr[3]?>">
+							<input type="hidden" id="net" value="<?php echo $svr[4]?>">
 						</div>
 					</div>
 				</div>
@@ -116,7 +117,7 @@ $(document).ready(function(){
 			data: function (d) {
 				d.cols= btoa($("#cols").val()+$("#fld").val()+",'"+$("#svr").val()+"'"),
 				d.tname= '<?php echo base64_encode($tname); ?>',
-				d.where= btoa($("#fld").val()+'>='+$("#min").val()+' and '+$("#fld").val()+'<='+$("#max").val()),
+				d.where= getWhere(),
 				d.x= '<?php echo $menu?>';
 			}
 		},
@@ -137,13 +138,18 @@ $(document).ready(function(){
 		}
     }});
 });
-
+function getWhere(){
+	var net='';
+	if($("#net").val()!='') net=" and net='"+$("#net").val()+"'";
+	return btoa($("#fld").val()+'>='+$("#min").val()+' and '+$("#fld").val()+'<='+$("#max").val()+net);
+}
 function submit_r_severity(){
 	var a=$("#severity").val().split("|");
 	$("#fld").val(a[0]);
 	$("#min").val(a[1]);
 	$("#max").val(a[2]);
 	$("#svr").val(a[3]);
+	$("#net").val(a[4]);
 	
 	mytbl.ajax.reload();
 }
