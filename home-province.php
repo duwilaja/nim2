@@ -44,7 +44,8 @@ for(var i=0;i<dataku.length;i++){
 var data = {
   labels: label,
   datasets: [{
-    label: 'Total Device',
+    axis: 'y',
+	label: 'Total Device',
     data: datas,
     backgroundColor: color,
     borderWidth: 1
@@ -55,11 +56,7 @@ const config = {
   type: 'bar',
   data: data,
   options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
+	indexAxis: 'y'
   },
 };
 

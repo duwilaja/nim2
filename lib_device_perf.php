@@ -37,7 +37,7 @@ if(count($healths)>0){
 			<?php echo $desc ?>
 			<br />
 			<a href="JavaScript:;" data-fancybox="" data-type="iframe" data-src="lib_device_graph<?php echo $ext?>?l=<?php echo $lnk?>&h=<?php echo $host?>&g=<?php echo $name?>">
-				<img width="100%" src="lib_api<?php echo $ext?>?lnk=<?php echo $lnk?>" />
+				<img style="background:white;" width="100%" src="lib_api<?php echo $ext?>?lnk=<?php echo $lnk?>" />
 			</a>
 		</div>
 	<?php
