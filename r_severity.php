@@ -46,6 +46,14 @@ if(count($o_severity)>0){
 				<div class="card mb-3">
 					<div class="card-body">
 						<div class="row">
+							<div class="input-group col-md-2">
+								<input type="text" id="df" placeholder="From Date" class="form-control datepicker">
+								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+							</div>
+							<div class="input-group col-md-2">
+								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker">
+								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+							</div>
 							<select class="form-control col-md-3" id="severity" name="severity">
 								<?php echo options($o_severity)?>
 							</select>
@@ -98,13 +106,20 @@ include "inc.js.php";
 
 
 $tname="core_node n left join core_status s on n.host=s.host";
+$tnamex="core_node n left join core_status_sla s on n.host=s.host";
 
 ?>
 
 <script>
+var today='<?php echo date('Y-m-d')?>';
+var tname='<?php echo base64_encode($tname); ?>';
+var tnamex='<?php echo base64_encode($tnamex); ?>';
+
 var mytbl, jvalidate;
 $(document).ready(function(){
 	page_ready();
+	$("#df").val(today);
+	$("#dt").val(today);
 	mytbl = $("#mytbl").DataTable({
 		serverSide: true,
 		processing: true,
@@ -116,7 +131,7 @@ $(document).ready(function(){
 			url: 'datatable<?php echo $ext?>',
 			data: function (d) {
 				d.cols= btoa($("#cols").val()+$("#fld").val()+",'"+$("#svr").val()+"'"),
-				d.tname= '<?php echo base64_encode($tname); ?>',
+				d.tname= get_tname(),
 				d.where= getWhere(),
 				d.x= '<?php echo $menu?>';
 			}
@@ -137,11 +152,24 @@ $(document).ready(function(){
 			required : true
 		}
     }});
+	
+	datepicker(true);
 });
+function get_tname(){
+	return $("#df").val()==today||$("#df").val()==''?tname:tnamex;
+}
 function getWhere(){
 	var net='';
+	var df=$("#df").val();
+	var dt=$("#dt").val();
+	if(df!=''&&df!=today){
+		df=" and dt>='"+df+"'";
+		if(dt!='') dt=" and dt<='"+dt+"'";
+	}else{
+		df=''; dt='';
+	}
 	if($("#net").val()!='') net=" and net='"+$("#net").val()+"'";
-	return btoa($("#fld").val()+'>='+$("#min").val()+' and '+$("#fld").val()+'<='+$("#max").val()+net);
+	return btoa($("#fld").val()+'>='+$("#min").val()+' and '+$("#fld").val()+'<='+$("#max").val()+net+df+dt);
 }
 function submit_r_severity(){
 	var a=$("#severity").val().split("|");
