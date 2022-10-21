@@ -146,7 +146,7 @@ function proses(grps,odatas){
 			}
 		}
 	}
-	log(datas);
+	//log(datas);
 	$(".ldr").hide();
 	draw(datas);
 }
@@ -175,6 +175,12 @@ function draw(data){
 		.setVerticalSpacing(10)				
 		.setHorizontalSpacing(25)
 		.back()
+		.on("nodeClick",function(event){
+			//log(event);
+			if(event.data.type=='Node'){
+				window.open("device<?php echo $ext;?>?h="+event.data.name,"ToolsWindow","width=700,height=450,location=no,scrollbars=yes");
+			}
+		})
 		.initialize();
 		
 	/* Alternative Options Object Syntax, opposed to the Fluent Interface Above
