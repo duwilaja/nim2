@@ -9,7 +9,7 @@ $card_title="Devices Status";
 
 $menu="ndevice";
 
-$breadcrumb="Nodes/$page_title";
+$breadcrumb="Objects/$page_title";
 
 include "inc.head.php";
 include "inc.menutop.php";

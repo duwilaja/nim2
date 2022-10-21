@@ -3,11 +3,11 @@ include "inc.common.php";
 include "inc.session.php";
 
 $page_icon="fa fa-table";
-$page_title="Locations";
+$page_title="Category";
 $modal_title="";
-$card_title="Locations Status";
+$card_title="Category Status";
 
-$menu="nlocation";
+$menu="-";
 
 $breadcrumb="Objects/$page_title";
 
@@ -46,14 +46,15 @@ include "inc.menutop.php";
 							<table id="mytbl" class="table table-striped table-bordered w-100">
 								<thead>
 									<tr>
-										<th>ID</th>
+										<!--th>ID</th>
 										<th>Name</th>
 										<th>Addr</th>
-										<th>City</th>
+										<th>City</th-->
 										<th>Province</th>
-										<th>Total</th>
-										<th>Up</th>
-										<th>Down</th>
+										<th>Total Device</th>
+										<th>Device ON</th>
+										<th>Device OFF</th>
+										<th>Last Updated</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -74,9 +75,9 @@ include "inc.db.php";
 $having=get("status")==""?"1=1":(get("status")=="0"?"u=0":"u>0");
 
 $tname="core_location l left join core_node n on l.locid=n.loc left join core_status s on n.host=s.host";
-$cols="locid,l.name,l.addr,city,prov,count(s.host) as t, sum(s.status) as u, count(s.host)-sum(s.status) as d";
-$csrc="locid,l.name,l.addr,city,prov";
-$grpby="locid,l.name,l.addr,city,prov";
+$cols="prov,count(s.host) as t, sum(s.status) as u, count(s.host)-sum(s.status) as d,date_format(min(checked),'%a %e %b %H:%i') as cek";
+$csrc="prov";
+$grpby="prov";
 
 ?>
 

@@ -14,7 +14,7 @@
 					</div>
 					<div class="menu-item ">
 						<a href="org<?php echo $ext?>" class="menu-link">
-							<span class="menu-icon"><i class="bi bi-bar-chart"></i></span>
+							<span class="menu-icon"><i class="bi bi-bounding-box-circles"></i></span>
 							<span class="menu-text">Business View</span>
 						</a>
 					</div>
@@ -49,6 +49,11 @@
 							<div class="menu-item">
 								<a href="n_location<?php echo $ext?>"  class="menu-link">
 									<div class="menu-text">Locations</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="n_category<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Categories</div>
 								</a>
 							</div>
 							<div class="menu-item">

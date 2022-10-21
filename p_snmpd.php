@@ -9,7 +9,7 @@ $card_title="SNMP Monitored Devices";
 
 $menu="ndevice";
 
-$breadcrumb="Plugins/$page_title";
+$breadcrumb="Objects/$page_title";
 
 include "inc.head.php";
 include "inc.menutop.php";
