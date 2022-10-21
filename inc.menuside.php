@@ -6,25 +6,31 @@
 				<!-- BEGIN menu -->
 				<div class="menu">
 					<div class="menu-header">Overview</div>
-					<div class="menu-item <?php echo $cPage == 'home' ? 'active' : ''?>">
+					<div class="menu-item <?php echo $menu == 'home' ? 'active' : ''?>">
 						<a href="home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-cpu"></i></span>
 							<span class="menu-text">Dashboard View</span>
 						</a>
 					</div>
-					<div class="menu-item ">
+					<div class="menu-item <?php echo $menu == 'ncategory' ? 'active' : ''?>">
+						<a href="n_category<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-bar-chart-steps"></i></span>
+							<span class="menu-text">Category View</span>
+						</a>
+					</div>
+					<div class="menu-item <?php echo $menu == 'org' ? 'active' : ''?>">
 						<a href="org<?php echo $ext?>" class="menu-link">
-							<span class="menu-icon"><i class="bi bi-bounding-box-circles"></i></span>
+							<span class="menu-icon"><i class="bi bi-bezier"></i></span>
 							<span class="menu-text">Business View</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php echo $menu == 'topo' ? 'active' : ''?>">
 						<a href="topo<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-diagram-2"></i></span>
 							<span class="menu-text">Topology View</span>
 						</a>
 					</div>
-					<div class="menu-item">
+					<div class="menu-item <?php echo $menu == 'maps' ? 'active' : ''?>">
 						<a href="maps<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-map"></i></span>
 							<span class="menu-text">Map View</span>
@@ -42,18 +48,13 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="n_device<?php echo $ext?>"  class="menu-link">
+								<a href="n_devicex<?php echo $ext?>"  class="menu-link">
 									<div class="menu-text">Devices</div>
 								</a>
 							</div>
 							<div class="menu-item">
 								<a href="n_location<?php echo $ext?>"  class="menu-link">
 									<div class="menu-text">Locations</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="n_category<?php echo $ext?>"  class="menu-link">
-									<div class="menu-text">Categories</div>
 								</a>
 							</div>
 							<div class="menu-item">
