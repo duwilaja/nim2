@@ -7,7 +7,7 @@ $page_title="Category";
 $modal_title="";
 $card_title="Category Status";
 
-$menu="-";
+$menu="ncategory";
 
 $breadcrumb="Objects/$page_title";
 

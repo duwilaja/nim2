@@ -178,6 +178,11 @@ while($row = fetch_row($result)){
 		$row[0]=$act;
 		$xx='-';
 	}
+	if($x=="ncategory"){
+		$act='<a title="Devices" class="dttbl" href="n_device'.$ext.'?prov='.$row[0].'">'.$row[0].'</a>';
+		$row[0]=$act;
+		$xx='-';
+	}
 	if($x=="ndevice"){
 		$act='<a title="Overview" class="dttbl" href="JavaScript:;" data-fancybox data-type="iframe" data-src="device'.$ext.'?h='.$row[0].'">'.$row[0].'</a>';
 		$row[0]=$act;

@@ -73,11 +73,12 @@ include "inc.db.php";
 
 $loc=get("loc")==""?"1=1":"loc='".get("loc")."'";
 $status=get("status")==""?"1=1":"status='".get("status")."'";
+$prov=get("prov")==""?"1=1":"prov='".get("prov")."'";
 
-$where = "$loc and $status";
+$where = "$loc and $status and $prov";
 
-$tname="core_node n left join core_status s on n.host=s.host";
-$cols="n.host,name,net,loc,grp,typ,if(status=1,'UP','DOWN') as stt,n.rowid";
+$tname="core_node n left join core_status s on n.host=s.host left join core_location l on n.loc=l.locid";
+$cols="n.host,n.name,net,loc,grp,typ,if(status=1,'UP','DOWN') as stt,n.rowid";
 $csrc="n.host,name,net,loc,grp,typ";
 $grpby="";
 
