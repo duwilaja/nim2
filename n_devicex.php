@@ -81,14 +81,15 @@ disconnect($conn);
 					</select>
 				</div>
 				<div class="col-xl-2">
-					
+					<div class="small text-white text-opacity-50 mb-2"><b>&nbsp;</b></div>
+					<button type="button" onclick="reloadtbl()" class="btn btn-success"><i class="fas fa-refresh"></i></button>
 				</div>
 			</div>
 			<div>&nbsp;</div>
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header hidden">
 						<div class="card-title"><?php echo $card_title?></div>
-						<div class="card-options ">
+						<div class="card-options hidden">
 							<a href="#" title="Refresh" onclick="reloadtbl();"><i class="fe fe-refresh-cw"></i></a>
 							<a href="#" title="Expand/Collapse" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
 							<!--a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a-->
