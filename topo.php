@@ -141,6 +141,15 @@ function fitAnimated() {
 	};
 	if(network!=null) network.fit({ animation: options });
 }
+function getHost(id){
+	var h="";
+	for(var  i=0; i<nodes.length; i++){
+		if(nodes[i]['id']==id){
+			h=nodes[i]['label']; break;
+		}
+	}
+	return h;
+}
 function draw(){
 	var container = document.getElementById('hasil');
       var data = {
@@ -154,6 +163,7 @@ function draw(){
 			//alert(params["nodes"]);
 			//document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
 			//window.open("toolss<?php echo '';?>?id="+params["nodes"],"ToolsWindow","width=700,height=450,location=no,scrollbars=yes");
+			window.open("device<?php echo $ext;?>?h="+getHost(params["nodes"]),"ToolsWindow","width=700,height=450,location=no,scrollbars=yes");
 			var nodeId = params["nodes"];
 			var coptions = {
 			  // position: {x:positionx,y:positiony}, // this is not relevant when focusing on nodes
