@@ -179,7 +179,7 @@ while($row = fetch_row($result)){
 		$xx='-';
 	}
 	if($x=="ncategory"){
-		$act='<a title="Devices" class="dttbl" href="n_device'.$ext.'?prov='.$row[0].'">'.$row[0].'</a>';
+		$act='<a title="Devices" class="dttbl" href="n_device'.$ext.'?typ='.$row[0].'">'.$row[0].'</a>';
 		$row[0]=$act;
 		$xx='-';
 	}
