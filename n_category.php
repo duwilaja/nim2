@@ -50,7 +50,7 @@ include "inc.menutop.php";
 										<th>Name</th>
 										<th>Addr</th>
 										<th>City</th-->
-										<th>Province</th>
+										<th>Device Type</th>
 										<th>Total Device</th>
 										<th>Device ON</th>
 										<th>Device OFF</th>
@@ -74,10 +74,10 @@ include "inc.db.php";
 
 $having=get("status")==""?"1=1":(get("status")=="0"?"u=0":"u>0");
 
-$tname="core_location l left join core_node n on l.locid=n.loc left join core_status s on n.host=s.host";
-$cols="prov,count(s.host) as t, sum(s.status) as u, count(s.host)-sum(s.status) as d,date_format(min(checked),'%a %e %b %H:%i') as cek";
-$csrc="prov";
-$grpby="prov";
+$tname="core_node n left join core_status s on n.host=s.host";
+$cols="typ,count(s.host) as t, sum(s.status) as u, count(s.host)-sum(s.status) as d,date_format(min(checked),'%a %e %b, %H:%i') as cek";
+$csrc="typ";
+$grpby="typ";
 
 ?>
 
