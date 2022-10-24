@@ -237,7 +237,7 @@ function loadDenah(mydata){
 	var layers='';
 	for(var i=0;i<mydata.length;i++){
 		var d=mydata[i];
-		var ttl=d['name']+'\n Total:'+d['cnt']+'\n ON:'+d['onoff']+'\n OFF:'+d['off'];
+		var ttl='\n Total:'+d['cnt']+'\n ON:'+d['onoff']+'\n OFF:'+d['off'];
 		
 		var color='ffff00'; //kuning
 		if(d['onoff']==d["cnt"]) color='00ff00'; //hijau semua on
