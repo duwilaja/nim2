@@ -237,17 +237,17 @@ function loadDenah(mydata){
 	var layers='';
 	for(var i=0;i<mydata.length;i++){
 		var d=mydata[i];
-		var ttl='\n Total:'+d['cnt']+'\n ON:'+d['onoff']+'\n OFF:'+d['off'];
+		var ttl=d['name']+'\nTotal: '+d['cnt']+'\nON: '+d['onoff']+'\nOFF: '+d['off'];
 		
 		var color='ffff00'; //kuning
 		if(d['onoff']==d["cnt"]) color='00ff00'; //hijau semua on
 		if(d['off']==d['cnt']) color='ff0000'; //merah semua off
 		
 		area+='<area id="'+d['locid']+'" shape="circle" coords="'+d['lat']+','+d['lng']+',7" href="#" title="'+ttl+'" alt="" data-maphilight=\'{"strokeColor":"000000","strokeWidth":1,"fillColor":"'+color+'","fillOpacity":"0.5","alwaysOn":true}\'>';
-		layers+='<div style="color:white;position:absolute;top:'+d['lng']+'px; left:'+d['lat']+'px;">'+d['locid']+'</div>';
+		//layers+='<div style="color:white;position:absolute;top:'+d['lng']+'px; left:'+d['lat']+'px;">'+d['locid']+'</div>';
 	}
 	$("#myfeatures").html(area);
-	$("#mylayers").html(layers);
+	//$("#mylayers").html(layers);
 	$('#petaku').maphilight();
 }
 
