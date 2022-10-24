@@ -116,7 +116,12 @@ include "inc.menutop.php";
 					<div class="card mb-3">
 						<div class="card-body">
 							<div id="map" style="height:450px; z-index: 1; display:none;"></div>
-							<img width="" src="img/peta.svg" />
+							<!--img width="" src="img/peta.svg" /-->
+							<div style="position:relative;">
+							<img id="petaku" usemap="#features" src="img/denah.jpg" alt="denah">
+							<div id="mylayers"></div>
+							</div>
+							<map name="features" id="myfeatures"></map>
 						</div>
 					</div>
 				</div>
@@ -129,6 +134,7 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 ?>
+<script type="text/javascript" src="js/jquery.maphilight.js"></script>
 <script>
 markerClickFunction = function(id) {
 		return function(e) {
@@ -151,9 +157,12 @@ $(document).ready(function(){
 	
 	getData('onoff','maps-onoff');
 	//widget_map();
-	
+	widget_denah();
 });
 
+function widget_denah(){
+	get_loc();
+}
 
 var map;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -181,15 +190,17 @@ function widget_map(){
 	get_loc();
 }
 
-function get_loc(){
+function get_loc(q=''){
 	$.ajax({
 		type: 'POST',
 		url: 'dataget'+ext,
 		data: {q:'map',id:0},
 		success: function(data){
 			var json = JSON.parse(data);
+			log(json);
 			if(json['code']=='200'){
-				draw_map(json['msgs']);
+				//draw_map(json['msgs']);
+				loadDenah(json['msgs']);
 			}else{
 				log(json['msgs']);
 			}
@@ -218,6 +229,26 @@ function draw_map(data){
 		}
 
 		map.addLayer(markers);
+}
+
+
+function loadDenah(mydata){
+	var area='';
+	var layers='';
+	for(var i=0;i<mydata.length;i++){
+		var d=mydata[i];
+		var ttl=d['name']+'\n Total:'+d['cnt']+'\n ON:'+d['onoff']+'\n OFF:'+d['off'];
+		
+		var color='ffff00'; //kuning
+		if(d['onoff']==d["cnt"]) color='00ff00'; //hijau semua on
+		if(d['off']==d['cnt']) color='ff0000'; //merah semua off
+		
+		area+='<area id="'+d['locid']+'" shape="circle" coords="'+d['lat']+','+d['lng']+',7" href="#" title="'+ttl+'" alt="" data-maphilight=\'{"strokeColor":"000000","strokeWidth":1,"fillColor":"'+color+'","fillOpacity":"0.5","alwaysOn":true}\'>';
+		layers+='<div style="color:white;position:absolute;top:'+d['lng']+'px; left:'+d['lat']+'px;">'+d['locid']+'</div>';
+	}
+	$("#myfeatures").html(area);
+	$("#mylayers").html(layers);
+	$('#petaku').maphilight();
 }
 
 </script>
