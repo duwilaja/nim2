@@ -5,11 +5,11 @@ include "inc.common.php";
 include "inc.session.php";
 
 $page_icon="fa fa-table";
-$page_title="Reload Controls";
-$modal_title="Reload Control";
+$page_title="Events";
+$modal_title="Event";
 $card_title="$page_title";
 
-$menu="mbg";
+$menu="mev";
 
 $breadcrumb="Setup/$page_title";
 
@@ -50,10 +50,9 @@ include "inc.menutop.php";
 							<table id="mytbl" class="table table-striped table-bordered w-100">
 								<thead>
 									<tr>
-										<th>Name</th>
-										<th>Started At</th>
-										<th>Finished At</th>
-										<th>Status</th>
+										<th>Event</th>
+										<th>Mail To</th>
+										<th>Telegram To</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -80,23 +79,28 @@ include "inc.menutop.php";
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="startnow" />
-<input type="hidden" name="tname" value="core_bgjob" />
-<input type="hidden" id="running" />
-<input type="hidden" name="startnow" id="startnow">
+<input type="hidden" name="cols" value="mailto,teleto" />
+<input type="hidden" name="tname" value="core_events" />
 					
 		  <div class="row mb-3">
-			<div class="form-group col-md-6">
-				<label>Name</label>
-				<input type="text" readonly id="name" name="name" placeholder="..." class="form-control">
+			<div class="form-group col-md-12">
+				<label>Event</label>
+				<input type="text" readonly id="eventid" name="eventid" placeholder="..." class="form-control">
 			</div>
-			<div class="form-group col-md-6">
-				<label>Status</label>
-				<input type="text" readonly id="status" name="status" placeholder="..." class="form-control">
-			</div>
-			
 		  </div>
 		  <div class="row mb-3">
+			<div class="form-group col-md-12">
+				<label>Mail To</label>
+				<textarea id="mailto" name="mailto" placeholder="..." class="form-control"></textarea>
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-12">
+				<label>Telegram Chat ID</label>
+				<input type="text" id="teleto" name="teleto" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  <div class="row mb-3 hidden">
 			<div class="form-group col-md-6">
 				<label>Started At</label>
 				<input type="text" readonly id="startedat" name="startedat" placeholder="..." class="form-control">
@@ -119,7 +123,7 @@ include "inc.menutop.php";
 	  </div>
 	  <div class="modal-footer">
 	    <!--button type="button" class="btn btn-danger" id="bdel"  onclick="confirmDelete();">Delete</button-->
-		<button type="button" class="btn btn-success" onclick="checkAndSave();">Start</button>
+		<button type="button" class="btn btn-success" onclick="saveData();">Save</button>
 		<button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
 		
 	  </div>
@@ -131,9 +135,9 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 
-$tname="core_bgjob";
-$cols="name,startedat,finishedat,if(running='1','Running',if(startnow='1','Starting','Stopped')) as status,rowid";
-$csrc="name";
+$tname="core_events";
+$cols="eventid,mailto,teleto,rowid";
+$csrc="eventid";
 
 ?>
 
