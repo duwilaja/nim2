@@ -83,6 +83,10 @@ if($mn=='mbg'){
 	$res=crud($conn);
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
+if($mn=='mev'){
+	$res=crud($conn);
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
 if($mn=='mdevice'){
 	$res=crud($conn);
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
