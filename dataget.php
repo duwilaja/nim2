@@ -26,6 +26,7 @@ switch($q){
 	case 'mtopo': $sql="select * from core_netdiagram where rowid='$id'"; break;
 	case 'mlov': $sql="select * from core_lov where rowid='$id'"; break;
 	case 'mbg': $sql="select *,if(running='1','Running',if(startnow='1','Starting','Stopped')) as status from core_bgjob where rowid='$id'"; break;
+	case 'mev': $sql="select * from core_events where rowid='$id'"; break;
 	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	

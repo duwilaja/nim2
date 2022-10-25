@@ -186,6 +186,11 @@
 								</a>
 							</div>
 							<div class="menu-item">
+								<a href="m_events<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Events</span>
+								</a>
+							</div>
+							<div class="menu-item">
 								<a href="m_bg<?php echo $ext?>" class="menu-link">
 									<span class="menu-text">Reload Controls</span>
 								</a>
