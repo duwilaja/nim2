@@ -74,7 +74,7 @@ $where="";//get("loc")==""?"":"loc='".get("loc")."'";
 
 $tname="devices d inner join applications a on a.device_id=d.device_id";
 $cols="hostname,sysName,sysDescr,app_type,app_state";
-$csrc="hostname,sysName,apptype";
+$csrc="hostname,sysName,app_type";
 $grpby="";
 
 ?>
