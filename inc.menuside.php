@@ -62,6 +62,11 @@
 									<div class="menu-text">SNMP</div>
 								</a>
 							</div>
+							<div class="menu-item">
+								<a href="p_app<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Application</div>
+								</a>
+							</div>
 						</div>
 					</div>
 					<!--div class="menu-item has-sub">
