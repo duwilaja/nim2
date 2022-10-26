@@ -73,7 +73,7 @@ include "inc.db.php";
 $where="";//get("loc")==""?"":"loc='".get("loc")."'";
 
 $tname="devices d inner join applications a on a.device_id=d.device_id";
-$cols="hostname,sysName,sysDescr,apptype,app_state";
+$cols="hostname,sysName,sysDescr,apptype,app_state,a.device_id";
 $csrc="hostname,sysName,apptype";
 $grpby="";
 
