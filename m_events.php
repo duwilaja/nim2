@@ -51,7 +51,7 @@ include "inc.menutop.php";
 								<thead>
 									<tr>
 										<th>Event</th>
-										<th>Mail To</th>
+										<th>Mail To (; separator)</th>
 										<th>Telegram To</th>
 									</tr>
 								</thead>
