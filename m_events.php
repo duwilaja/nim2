@@ -51,7 +51,7 @@ include "inc.menutop.php";
 								<thead>
 									<tr>
 										<th>Event</th>
-										<th>Mail To</th>
+										<th>Mail To (; separator)</th>
 										<th>Telegram To</th>
 									</tr>
 								</thead>
@@ -91,7 +91,7 @@ include "inc.menutop.php";
 		  <div class="row mb-3">
 			<div class="form-group col-md-12">
 				<label>Mail To</label>
-				<textarea id="mailto" name="mailto" placeholder="..." class="form-control"></textarea>
+				<textarea id="mailto" name="mailto" placeholder="Separated by ; (semicolon)" class="form-control"></textarea>
 			</div>
 		  </div>
 		  <div class="row mb-3">
