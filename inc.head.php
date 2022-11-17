@@ -37,6 +37,11 @@
 		
 		<!-- overwrite css -->
 		<link href="css/custom.css" rel="stylesheet" />
+		<style type="text/css">
+		.input-group-text{
+			padding: .600rem;
+		}
+		</style>
 
 	</head>
 

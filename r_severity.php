@@ -43,20 +43,22 @@ if(count($o_severity)>0){
 			</div-->
 		</div>
 		<!--End Page header-->
-				<div class="card mb-3">
+				<div class="mb-3">
 					<div class="card-body">
 						<div class="row">
-							<div class="input-group col-md-2">
+							<div class="col-md-2"><div class="input-group">
 								<input type="text" id="df" placeholder="From Date" class="form-control datepicker">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
-							</div>
-							<div class="input-group col-md-2">
+							</div></div>
+							<div class="col-md-2"><div class="input-group">
 								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
-							</div>
-							<select class="form-control col-md-3" id="severity" name="severity">
+							</div></div>
+							<div class="col-md-3">
+							<select class="form-control" id="severity" name="severity">
 								<?php echo options($o_severity)?>
 							</select>
+							</div>
 							&nbsp;&nbsp;&nbsp;
 							<button type="button" onclick="submit_r_severity();" class="btn btn-primary col-md-1">Submit</button>
 							
@@ -118,8 +120,8 @@ var tnamex='<?php echo base64_encode($tnamex); ?>';
 var mytbl, jvalidate;
 $(document).ready(function(){
 	page_ready();
-	$("#df").val(today);
-	$("#dt").val(today);
+	//$("#df").val(today);
+	//$("#dt").val(today);
 	mytbl = $("#mytbl").DataTable({
 		serverSide: true,
 		processing: true,
