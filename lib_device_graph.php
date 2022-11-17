@@ -36,17 +36,17 @@ include "inc.head.php";
 
 						</div>
 						<!--End Page header-->
-				<div class="card">
+				<div class="mb-3">
 					<div class="card-body">
 						<div class="row">
-							<div class="input-group col-md-2">
+							<div class="col-md-2"><div class="input-group">
 								<input type="text" id="df" placeholder="From Date" class="form-control datepicker" value="<?php echo date("Y-m-d")?>">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
-							</div>
-							<div class="input-group col-md-2">
+							</div></div>
+							<div class="col-md-2"><div class="input-group">
 								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker" value="<?php echo date("Y-m-d")?>">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
-							</div>
+							</div></div>
 							&nbsp;&nbsp;&nbsp;
 							<button type="button" onclick="submit_graph();" class="btn btn-primary col-md-1">Submit</button>
 							
@@ -57,7 +57,7 @@ include "inc.head.php";
 				
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card mb-3">
 									<div class="card-header">
 										<div class="card-title"><?php echo $title?></div>
 										<div class="card-options ">
