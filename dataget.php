@@ -38,8 +38,8 @@ switch($q){
 			$grpby="lat,lng,concat(l.name,'\n',l.addr),locid";
 		$sql="select lat,lng,concat(l.name,'\n',l.addr) as name,locid,sum(s.status) as onoff,count(n.host) as cnt, (count(n.host)-sum(s.status)) as off from $tname where lat<>'' and lng<>'' and $whr group by $grpby"; break;
 	
-	case 'nodes': $sql="select rowid as id, host as label, concat(host,'/',name) as title, concat('icon/',lower(typ),'.png') as image, 'image' as shape 
-					from core_node where $whr"; break;
+	case 'nodes': $sql="select n.rowid as id, n.host as label, concat(n.host,'/',name) as title, concat('icon/',lower(typ),'.png') as image, 'image' as shape,
+					if(status=1,'#ffffff','#ff0000') as fc from core_node n join core_status s on s.host=n.host where $whr"; break;
 	case 'edges': $sql="select n1.rowid as `from`, n2.rowid as `to`, 50 as `length` from core_netdiagram d 
 				join core_node n1 on n1.host=d.dari join core_node n2 on n2.host=d.ke"; 
 				if($isgrp) $sql.=" where n1.grp='$grp'";

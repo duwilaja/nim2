@@ -100,6 +100,9 @@ function get_nodes(){
 			var json = JSON.parse(data);
 			if(json['code']=='200'){
 				nodes = json['msgs'];
+				for(var i=0;i<nodes.length;i++){
+					nodes[i]['font']={color:nodes[i]['fc']};
+				}
 				get_edges();
 			}else{
 				log(json['msgs']);
