@@ -133,7 +133,7 @@ $where = "$loc and $status and $prov";
 
 $tname="core_node n left join core_status s on n.host=s.host left join core_location l on n.loc=l.locid";
 $cols="n.host,n.name,net,loc,grp,typ,if(status=1,'UP','DOWN') as stt,n.rowid";
-$csrc="n.host,name,net,loc,grp,typ";
+$csrc="n.host,n.name,net,loc,grp,typ";
 $grpby="";
 
 
