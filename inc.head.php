@@ -41,6 +41,9 @@
 		.input-group-text{
 			padding: .600rem;
 		}
+		.form-control:not([multiple]) option {
+			color: #000;
+		}
 		</style>
 
 	</head>
