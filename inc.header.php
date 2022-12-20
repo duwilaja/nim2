@@ -172,11 +172,12 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-end me-lg-3 fs-11px mt-1">
 						<a class="dropdown-item d-flex align-items-center" href="profile<?php echo $ext?>">PROFILE <i class="bi bi-person-circle ms-auto text-theme fs-16px my-n1"></i></a>
-						<!--a class="dropdown-item d-flex align-items-center" href="email_inbox.html">INBOX <i class="bi bi-envelope ms-auto text-theme fs-16px my-n1"></i></a>
-						<a class="dropdown-item d-flex align-items-center" href="calendar.html">CALENDAR <i class="bi bi-calendar ms-auto text-theme fs-16px my-n1"></i></a>
+						<!--a class="dropdown-item d-flex align-items-center" href="calendar.html">CALENDAR <i class="bi bi-calendar ms-auto text-theme fs-16px my-n1"></i></a>
 						<a class="dropdown-item d-flex align-items-center" href="settings.html">SETTINGS <i class="bi bi-gear ms-auto text-theme fs-16px my-n1"></i></a-->
-						<div class="dropdown-divider"></div>
 						<a class="dropdown-item d-flex align-items-center" href="logout<?php echo $ext?>">LOGOUT <i class="bi bi-toggle-off ms-auto text-theme fs-16px my-n1"></i></a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item d-flex align-items-center" href="#" onclick="modal(atob('<?php echo $about[0]?>'),atob('<?php echo $about[1]?>'));">ABOUT <i class="bi bi-at ms-auto text-theme fs-16px my-n1"></i></a>
+						
 					</div>
 				</div>
 			</div>
