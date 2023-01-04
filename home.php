@@ -357,7 +357,7 @@ include "inc.menutop.php";
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-md-12 col-lg-5">
+				<div class="col-xl-4 col-md-12 col-lg-5 hidden">
 					<div class="card mb-3">
 						<div class="card-header pt-2 pb-0 border-bottom-0">
 							<!-- BEGIN title -->
@@ -426,6 +426,34 @@ include "inc.menutop.php";
 					</div>
 					
 				</div>
+				<div class="col-xl-4 col-md-12 col-lg-12">
+					<div class="card mb-3">
+						<div class="card-header">
+							<!-- BEGIN title -->
+							<div class="d-flex fw-bold small">
+								<span class="flex-grow-1">LONGEST DOWN</span>
+								<a href="#" data-toggle="card-expand" class="text-white text-opacity-50 text-decoration-none"><i class="bi bi-fullscreen"></i></a>
+							</div>
+							<!-- END title -->
+						</div>
+						<div class="card-body p-0">
+							<div id="isi-ketam"></div>
+							<div class="dimmer active ldr-ketam">
+								<div class="sk-cube-grid">
+									<div class="sk-cube sk-cube1"></div>
+									<div class="sk-cube sk-cube2"></div>
+									<div class="sk-cube sk-cube3"></div>
+									<div class="sk-cube sk-cube4"></div>
+									<div class="sk-cube sk-cube5"></div>
+									<div class="sk-cube sk-cube6"></div>
+									<div class="sk-cube sk-cube7"></div>
+									<div class="sk-cube sk-cube8"></div>
+									<div class="sk-cube sk-cube9"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!--End Row-->
 
@@ -471,6 +499,8 @@ $(document).ready(function(){
 	get_content("home-alert<?php echo $ext?>",{},".ldr-alert","#isi-alert");
 	getData('sla','home-sla');
 	get_content("home-sla-chart<?php echo $ext?>",{},".ldr-sla","#isi-sla");
+	get_content("home-down<?php echo $ext?>",{},".ldr-ketam","#isi-ketam");
+	
 });
 
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
