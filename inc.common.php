@@ -117,6 +117,7 @@ function compare_class($o,$n,$dclass,$hclass,$lclass){
 	return $ret;
 }
 function progress_bar($o,$fix,$t=-1){
+	$t=($t==0)?1:$t;
 	if($t==-1){
 		$ret=ceil($o/10)*10;
 	}else{
