@@ -156,6 +156,7 @@ $(document).ready(function(){
 
 var map;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var err='';
 
 function displayClock(){
 	var d=new Date();
@@ -208,15 +209,23 @@ function draw_map(data){
 			var color = a['onoff']>0?"green":"red";
 			var icon = L.AwesomeMarkers.icon({icon: 'server', prefix: 'fa', markerColor: color});
 			
-			var marker = L.marker(new L.LatLng(a['lat'], a['lng']), { title: title, icon: icon });
-			
-			var fn=markerClickFunction(a['locid']);
-			marker.on('click', fn);
-			
-			markers.addLayer(marker);
+			if(isNaN(data[i]['lat'])||isNaN(data[i]['lng'])){
+				err+=data[i]['name']+'/';
+			}else{
+				var marker = L.marker(new L.LatLng(a['lat'], a['lng']), { title: title, icon: icon });
+				
+				var fn=markerClickFunction(a['locid']);
+				marker.on('click', fn);
+				
+				markers.addLayer(marker);
+			}
 		}
 
 		map.addLayer(markers);
+		
+		if(err!='') {
+			alert('Error: '+err);
+		}
 }
 
 </script>
