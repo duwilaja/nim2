@@ -5,7 +5,8 @@
 			<div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
 				<!-- BEGIN menu -->
 				<div class="menu">
-					<div class="menu-header">Overview</div>
+					<div class="menu-header">OVERVIEW</div>
+					<?php if($is_nms){?>
 					<div class="menu-item <?php echo $menu == 'home' ? 'active' : ''?>">
 						<a href="home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-cpu"></i></span>
@@ -36,7 +37,23 @@
 							<span class="menu-text">Map View</span>
 						</a>
 					</div>
-					<div class="menu-header">Components</div>
+					<?php }?>
+					<?php if($is_asset){?>
+					<div class="menu-item <?php echo $menu == 'aset' ? 'active' : ''?>">
+						<a href="ass_home<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-box-seam"></i></span>
+							<span class="menu-text">Asset</span>
+						</a>
+					</div>
+					<div class="menu-item <?php echo $menu == 'asetloc' ? 'active' : ''?>">
+						<a href="ass_maps<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-pin-map"></i></span>
+							<span class="menu-text">Asset Locations</span>
+						</a>
+					</div>
+					<?php }?>
+					<?php if($is_nms){?>
+					<div class="menu-header">MONITORING</div>
 					<div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
@@ -69,44 +86,6 @@
 							</div>
 						</div>
 					</div>
-					<!--div class="menu-item has-sub">
-						<a href="javascript:;" class="menu-link">
-							<div class="menu-icon">
-								<i class="bi bi-heart-pulse"></i>
-								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span--
-							</div>
-							<div class="menu-text d-flex align-items-center">Health</div> 
-							<span class="menu-caret"><b class="caret"></b></span>
-						</a>
-						<div class="menu-submenu">
-							<div class="menu-item">
-								<a href="memory.html"  class="menu-link">
-									<div class="menu-text">Memory</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="processor.html" class="menu-link">
-									<div class="menu-text">Processor</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="storage.html"  class="menu-link">
-									<div class="menu-text">Storage</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="temperature.html"  class="menu-link">
-									<div class="menu-text">Temperature</div>
-								</a>
-							</div>
-							<div class="menu-item">
-								<a href="voltage.html" 
-								 class="menu-link">
-									<div class="menu-text">Voltage</div>
-								</a>
-							</div>
-						</div>
-					</div-->
 					<div class="menu-item has-sub">
 						<a href="#" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-journals"></i></span>
@@ -229,6 +208,32 @@
 							</div>
 						</div>
 					</div>
+					<?php }?>
+					<?php if($is_asset){?>
+					<div class="menu-header">ASSET</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-clipboard2"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Master</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="ass_m_loc<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Location</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="ass_mast<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Asset</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<?php }?>
 					
 				</div>
 				<!-- END menu -->
