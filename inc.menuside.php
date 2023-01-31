@@ -51,6 +51,12 @@
 							<span class="menu-text">Asset Locations</span>
 						</a>
 					</div>
+					<div class="menu-item <?php echo $menu == 'tick' ? 'active' : ''?>">
+						<a href="tick_home<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-ticket-perforated"></i></span>
+							<span class="menu-text">Tickets</span>
+						</a>
+					</div>
 					<?php }?>
 					<?php if($is_nms){?>
 					<div class="menu-header">MONITORING</div>
@@ -209,12 +215,12 @@
 						</div>
 					</div>
 					<?php }?>
-					<?php if($is_asset){?>
-					<div class="menu-header">ASSET</div>
+					<?php if($is_ticket){?>
+					<div class="menu-header">TICKET</div>
 					<div class="menu-item has-sub">
 						<a href="javascript:;" class="menu-link">
 							<div class="menu-icon">
-								<i class="bi bi-clipboard2"></i>
+								<i class="bi bi-inboxes"></i>
 								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
 							</div>
 							<div class="menu-text d-flex align-items-center">Master</div> 
@@ -222,12 +228,118 @@
 						</a>
 						<div class="menu-submenu">
 							<div class="menu-item">
-								<a href="ass_m_loc<?php echo $ext?>"  class="menu-link">
+								<a href="m_loc<?php echo $ext?>"  class="menu-link">
 									<div class="menu-text">Location</div>
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="ass_mast<?php echo $ext?>" class="menu-link">
+								<a href="m_serv<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Services</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="m_serv<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Category</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-ticket-perforated"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Tickets</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="tickets<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">All</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="ticketo<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Open</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-journals"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Reports</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="r_ticksum<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Summary</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="r_tick<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Tickets</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<?php }?>
+					<?php if($is_asset){?>
+					<div class="menu-header">ASSET</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-inboxes"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Master</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="m_loc<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Location</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="m_brand<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Brand</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="m_ascat<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Category</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="m_ass<?php echo $ext?>" class="menu-link">
+									<div class="menu-text">Asset</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="bi bi-journals"></i>
+								<!--span class="w-5px h-5px rounded-3 bg-theme position-absolute top-0 end-0 mt-3px me-3px"></span-->
+							</div>
+							<div class="menu-text d-flex align-items-center">Reports</div> 
+							<span class="menu-caret"><b class="caret"></b></span>
+						</a>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="r_asssum<?php echo $ext?>"  class="menu-link">
+									<div class="menu-text">Summary</div>
+								</a>
+							</div>
+							<div class="menu-item">
+								<a href="r_ass<?php echo $ext?>" class="menu-link">
 									<div class="menu-text">Asset</div>
 								</a>
 							</div>

@@ -28,6 +28,9 @@ switch($q){
 	case 'mbg': $sql="select *,if(running='1','Running',if(startnow='1','Starting','Stopped')) as status from core_bgjob where rowid='$id'"; break;
 	case 'mev': $sql="select * from core_events where rowid='$id'"; break;
 	
+	case 'mbrand': $sql="select * from ass_brand where rowid='$id'"; break;
+	case 'mascat': $sql="select * from ass_cat where rowid='$id'"; break;
+	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	
 	case 'home1': $sql="select count(host) as tdev, sum(status) as tdup, count(host)-sum(status) as tdon from core_status"; 

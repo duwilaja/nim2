@@ -3,6 +3,7 @@ $ext=".php";
 date_default_timezone_set("Asia/Jakarta");
 
 $is_nms=true;
+$is_ticket=true;
 $is_asset=true;
 
 $theme="hor-skin/horizontal-dark.css"; //hor-skin/hor-skin1.css
