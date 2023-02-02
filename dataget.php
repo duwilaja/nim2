@@ -30,6 +30,7 @@ switch($q){
 	
 	case 'mbrand': $sql="select * from ass_brand where rowid='$id'"; break;
 	case 'mascat': $sql="select * from ass_cat where rowid='$id'"; break;
+	case 'mass': $sql="select * from ass_ets where rowid='$id'"; break;
 	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	

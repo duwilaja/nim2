@@ -5,11 +5,11 @@ include "inc.common.php";
 include "inc.session.php";
 
 $page_icon="fa fa-table";
-$page_title="Asset Category";
-$modal_title="Category";
+$page_title="Asset";
+$modal_title="Asset";
 $card_title="Master $page_title";
 
-$menu="mascat";
+$menu="mass";
 
 $breadcrumb="Master/$page_title";
 
@@ -18,6 +18,16 @@ $o_lovtyp=[
 	["network","Network"],
 	["devicetype","Device Type"]
 ];
+
+include "inc.db.php";
+$conn=connect();
+$rs=exec_qry($conn,"select locid,name from core_location order by name");
+$o_loc=fetch_all($rs);
+$rs=exec_qry($conn,"select brid,brname from ass_brand order by brname");
+$o_brn=fetch_all($rs);
+$rs=exec_qry($conn,"select catid,catname from ass_cat order by catname");
+$o_cat=fetch_all($rs);
+disconnect($conn);
 
 
 include "inc.head.php";
@@ -60,6 +70,10 @@ include "inc.menutop.php";
 										<!--th>Type</th-->
 										<th>ID</th>
 										<th>Name</th>
+										<th>Brand</th>
+										<th>Status</th>
+										<th>Warranty Expired</th>
+										
 									</tr>
 								</thead>
 								<tbody>
@@ -74,7 +88,7 @@ include "inc.menutop.php";
 
 <!-- Modal-->
 <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left modal_form">
-  <div role="document" class="modal-dialog">
+  <div role="document" class="modal-dialog modal-lg">
 	<div class="modal-content">
 	  <div class="modal-header"><strong id="exampleModalLabel" class="modal-title"><?php echo $modal_title?></strong>
 		<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">x</span></button>
@@ -86,28 +100,75 @@ include "inc.menutop.php";
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="catid,catname" />
-<input type="hidden" name="tname" value="ass_cat" />
+<input type="hidden" name="cols" value="assid,assname,assdesc,loc,brand,cat,warexp,gr,stts,sn" />
+<input type="hidden" name="tname" value="ass_ets" />
 		
-		  <div class="row hidden">
-			<div class="form-group col-md-12">
-				<label>Type</label>
-				<select class="form-control " id="typ" name="typ">
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>ID</label>
+				<input type="text" id="assid" name="assid" placeholder="..." class="form-control">
+			</div>
+			<div class="form-group col-md-6">
+				<label>Name</label>
+				<input type="text" id="assname" name="assname" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>S/N</label>
+				<input type="text" id="sn" name="sn" placeholder="..." class="form-control">
+			</div>
+			<div class="form-group col-md-6">
+				<label>Desc</label>
+				<textarea id="assdesc" name="assdesc" placeholder="..." class="form-control"></textarea>
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>Location</label>
+				<select class="form-control " id="loc" name="loc">
 					<option value="">-</option>
-					<?php echo options($o_lovtyp)?>
+					<?php echo options($o_loc)?>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label>Status</label>
+				<select class="form-control " id="stts" name="stts">
+					<option value="">-</option>
+					<?php echo options($o_assstts)?>
 				</select>
 			</div>
 		  </div>
-		  <div class="row">
-			<div class="form-group col-md-12">
-				<label>ID</label>
-				<input type="text" id="catid" name="catid" placeholder="..." class="form-control">
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>Brand</label>
+				<select class="form-control " id="brand" name="brand">
+					<option value="">-</option>
+					<?php echo options($o_brn)?>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label>Category</label>
+				<select class="form-control " id="cat" name="cat">
+					<option value="">-</option>
+					<?php echo options($o_cat)?>
+				</select>
 			</div>
 		  </div>
-		  <div class="row">
-			<div class="form-group col-md-12">
-				<label>Name</label>
-				<input type="text" id="catname" name="catname" placeholder="..." class="form-control">
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>Goods Receipt</label>
+				<div class="input-group">
+					<input type="text" id="gr" name="gr" placeholder="" class="form-control datepicker">
+					<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label>Warranty Expired</label>
+				<div class="input-group">
+					<input type="text" id="warexp" name="warexp" placeholder="" class="form-control datepicker">
+					<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+				</div>
 			</div>
 		  </div>
 		  
@@ -169,9 +230,9 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 
-$tname="ass_cat";
-$cols="catid,catname,rowid";
-$csrc="catname,catid";
+$tname="ass_ets";
+$cols="assid,assname,brand,stts,warexp,rowid";
+$csrc="assname";
 
 ?>
 
@@ -202,15 +263,15 @@ $(document).ready(function(){
 	jvalidate = $("#myf").validate({
     ignore: ":hidden:not(.selectpicker)",
 	rules :{
-        "catid" : {
+        "assid" : {
             required : true
         },
-		"catname" : {
+		"assname" : {
 			required : true
 		}
     }});
 	
-	//datepicker();
+	datepicker(true);
 	//timepicker();
 	//selectpicker(true);
 });

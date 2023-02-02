@@ -52,7 +52,11 @@ $o_sseverity=[
 	["major","Major"],
 	["critical","Critical"]
 ];
-
+$o_assstts=[
+	["active","active"],
+	["iddle","iddle"],
+	["inactive","inactive"]
+];
 
 /*common php functions*/
 function getVal($k,$kv){
