@@ -11,7 +11,7 @@ $card_title="Master $page_title";
 
 $menu="mbrand";
 
-$breadcrumb="Setup/$page_title";
+$breadcrumb="Master/$page_title";
 
 $o_lovtyp=[
 	["group","Group"],
