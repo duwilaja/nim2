@@ -157,7 +157,7 @@ include "inc.menutop.php";
 		  </div>
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
-				<label>Goods Receipt</label>
+				<label>Purchased</label>
 				<div class="input-group">
 					<input type="text" id="gr" name="gr" placeholder="" class="form-control datepicker">
 					<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
@@ -201,11 +201,11 @@ include "inc.menutop.php";
 					<input type="hidden" name="mnu" value="<?php echo $menu?>_batch">
 					<input type="hidden" id="svx" name="sv" />
 					<input type="hidden" name="cols" value="" />
-					<input type="hidden" name="tname" value="core_netdiagram" />
+					<input type="hidden" name="tname" value="ass_ets" />
 					
 						<!--div class="card-body"-->
 							<div class="form-group">
-								<label class=""><b>Data :</b><br /> - Copy paste from spreadsheet<br /> - 1st row always header field<br /> -  need sample? click <a target="_blank" style="text-decoration:underline;" href="sample_topology.xlsx">here</a></label>
+								<label class=""><b>Data :</b><br /> - Copy paste from spreadsheet<br /> - 1st row always header field<br /> -  need sample? click <a target="_blank" style="text-decoration:underline;" href="sample_asset.xlsx">here</a></label>
 								<div class="">
 									<textarea class="form-control" name="datas" rows="10" id="datas" placeholder="....."></textarea>
 								</div>
