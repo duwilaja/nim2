@@ -31,6 +31,11 @@ switch($q){
 	case 'mbrand': $sql="select * from ass_brand where rowid='$id'"; break;
 	case 'mascat': $sql="select * from ass_cat where rowid='$id'"; break;
 	case 'mass': $sql="select * from ass_ets where rowid='$id'"; break;
+	case 'asetloc': 
+			$tname="core_location l join ass_ets a on l.locid=a.loc";
+			$grpby="lat,lng,concat(l.name,'\n',l.addr),locid";
+			$where=$id==""?"lat<>'' and lng<>''":"lat<>'' and lng<>'' and stts='$id'";
+		$sql="select lat,lng,concat(l.name,'\n',l.addr) as name,locid,count(a.stts) as cnt from $tname where $where group by $grpby"; break;
 	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	
