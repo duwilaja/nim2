@@ -36,6 +36,9 @@ switch($q){
 			$grpby="lat,lng,concat(l.name,'\n',l.addr),locid";
 			$where=$id==""?"lat<>'' and lng<>''":"lat<>'' and lng<>'' and stts='$id'";
 		$sql="select lat,lng,concat(l.name,'\n',l.addr) as name,locid,count(a.stts) as cnt from $tname where $where group by $grpby"; break;
+	case 'asshom': $sql="select stts,count(stts) as tot from ass_ets  group by stts"; break;
+	case 'asscat': $sql="select cat,count(cat) as tot from ass_ets  group by cat"; break;
+	case 'brasscat': $sql="select cat,count(cat) as tot from ass_ets where stts='inactive' group by cat"; break;
 	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	

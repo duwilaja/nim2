@@ -10,7 +10,7 @@
 					<div class="menu-item <?php echo $menu == 'home' ? 'active' : ''?>">
 						<a href="home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-cpu"></i></span>
-							<span class="menu-text">Dashboard View</span>
+							<span class="menu-text">Monitoring</span>
 						</a>
 					</div>
 					<div class="menu-item <?php echo $menu == 'ncategory' ? 'active' : ''?>">
@@ -51,6 +51,8 @@
 							<span class="menu-text">Asset Locations</span>
 						</a>
 					</div>
+					<?php }?>
+					<?php if($is_ticket){?>
 					<div class="menu-item <?php echo $menu == 'tick' ? 'active' : ''?>">
 						<a href="tick_home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-ticket-perforated"></i></span>
