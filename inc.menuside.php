@@ -59,6 +59,12 @@
 							<span class="menu-text">Tickets</span>
 						</a>
 					</div>
+					<div class="menu-item <?php echo $menu == 'tickloc' ? 'active' : ''?>">
+						<a href="tick_maps<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-pin-map-fill"></i></span>
+							<span class="menu-text">Ticket Locations</span>
+						</a>
+					</div>
 					<?php }?>
 					<?php if($is_nms){?>
 					<div class="menu-header">MONITORING</div>
@@ -240,7 +246,7 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="m_serv<?php echo $ext?>" class="menu-link">
+								<a href="m_ticat<?php echo $ext?>" class="menu-link">
 									<div class="menu-text">Category</div>
 								</a>
 							</div>

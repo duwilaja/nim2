@@ -116,6 +116,15 @@ if($mn=='mass'){
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
 
+if($mn=='mticat'){
+	$res=crud($conn);
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
+if($mn=='mserv'){
+	$res=crud($conn);
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
+
 if($mn=='ip'){
 	$name=post('name');
 	$mask=post('subnet');

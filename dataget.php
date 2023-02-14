@@ -40,6 +40,9 @@ switch($q){
 	case 'asscat': $sql="select cat,count(cat) as tot from ass_ets  group by cat"; break;
 	case 'brasscat': $sql="select cat,count(cat) as tot from ass_ets where stts='inactive' group by cat"; break;
 	
+	case 'mticat': $sql="select * from tick_cat where rowid='$id'"; break;
+	case 'mserv': $sql="select * from tick_serv where rowid='$id'"; break;
+	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	
 	case 'home1': $sql="select count(host) as tdev, sum(status) as tdup, count(host)-sum(status) as tdon from core_status"; 
