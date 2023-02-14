@@ -30,7 +30,19 @@ if($user!=''&&$passwd!=''){
 	disconnect($conn);
 }
 if($loggedin){
-	header("Location: home$ext");
+	$hom='';
+	if($is_asset) {$hom="ass_home$ext";}
+	if($is_ticket) {$hom="tik_home$ext";}
+	if($is_nms) {$hom="home$ext";}
+	
+	if($hom!=''){
+		header("Location: $hom");
+	}else{
+		session_unset();
+		session_destroy();
+		
+		$m="Module disabled";
+	}
 }
 
 include "inc.head.php";
