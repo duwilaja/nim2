@@ -202,10 +202,10 @@ $(document).ready(function(){
 	jvalidate = $("#myf").validate({
     ignore: ":hidden:not(.selectpicker)",
 	rules :{
-        "catid" : {
+        "servid" : {
             required : true
         },
-		"catname" : {
+		"servname" : {
 			required : true
 		}
     }});
