@@ -40,8 +40,17 @@ switch($q){
 	case 'asscat': $sql="select cat,count(cat) as tot from ass_ets  group by cat"; break;
 	case 'brasscat': $sql="select cat,count(cat) as tot from ass_ets where stts='inactive' group by cat"; break;
 	
+	case 'tick': $sql="select * from tick_ets where rowid='$id'"; break;
 	case 'mticat': $sql="select * from tick_cat where rowid='$id'"; break;
 	case 'mserv': $sql="select * from tick_serv where rowid='$id'"; break;
+	case 'tikhom': $sql="select stts,count(stts) as tot from tick_ets  group by stts"; break;
+	case 'tikloc': 
+			$tname="core_location l join tick_ets a on l.locid=a.loc";
+			$grpby="lat,lng,concat(l.name,'\n',l.addr),stts,locid";
+			$where="lat<>'' and lng<>'' and stts<>'closed'";
+		$sql="select lat,lng,concat(l.name,'\n',l.addr) as name,locid,count(a.stts) as cnt,a.stts from $tname where $where group by $grpby"; break;
+	case 'tickcat': $sql="select cat,count(cat) as tot from tick_ets  group by cat"; break;
+	case 'ticksvc': $sql="select svc,count(svc) as tot from tick_ets group by svc"; break;
 	
 	case 'profile': $sql="select * from core_user where uid='$id'"; break;
 	

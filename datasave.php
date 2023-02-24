@@ -124,6 +124,21 @@ if($mn=='mserv'){
 	$res=crud($conn);
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
+if($mn=='tick'){
+	if(post('sv')=='NEW'){
+		$fcols='ticketno,creby,updby,created'; $fvals="'".date('YmdHis')."','$s_ID','$s_ID',NOW()";
+		$res=crud($conn,"$fcols","$fvals");
+	}else{
+		if(post('sv')=='UPD'){
+			$sq=sql_insert("tick_note","notes,stts,ticketno",$conn,"dtm,updby","NOW(),'$s_ID'");
+			$r=exec_qry($conn,$sq);
+		}
+		$fcols='updby,updated'; $fvals="'$s_ID',NOW()";
+		$res=crud($conn,"$fcols","$fvals");
+	}
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
+
 
 if($mn=='ip'){
 	$name=post('name');

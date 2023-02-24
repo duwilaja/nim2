@@ -2,7 +2,7 @@
 $ext=".php";
 date_default_timezone_set("Asia/Jakarta");
 
-$is_nms=true;
+$is_nms=false;
 $is_ticket=true;
 $is_asset=true;
 
@@ -54,8 +54,22 @@ $o_sseverity=[
 ];
 $o_assstts=[
 	["active","active"],
-	["iddle","iddle"],
+	["standby","standby"],
 	["inactive","inactive"]
+];
+
+$o_tikstts=[
+	["new","new"],
+	["open","open"],
+	["progress","progress"],
+	["pending","pending"],
+	["solved","solved"],
+	["closed","closed"]
+];
+$o_tikgrp=[
+	["EOS","EOS"],
+	["L1","L1"],
+	["L2","L2"]
 ];
 
 /*common php functions*/
