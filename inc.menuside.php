@@ -38,6 +38,20 @@
 						</a>
 					</div>
 					<?php }?>
+					<?php if($is_ticket){?>
+					<div class="menu-item <?php echo $menu == 'htick' ? 'active' : ''?>">
+						<a href="tick_home<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-ticket-perforated"></i></span>
+							<span class="menu-text">Tickets</span>
+						</a>
+					</div>
+					<div class="menu-item <?php echo $menu == 'tickloc' ? 'active' : ''?>">
+						<a href="tick_maps<?php echo $ext?>" class="menu-link">
+							<span class="menu-icon"><i class="bi bi-pin-map-fill"></i></span>
+							<span class="menu-text">Ticket Locations</span>
+						</a>
+					</div>
+					<?php }?>
 					<?php if($is_asset){?>
 					<div class="menu-item <?php echo $menu == 'aset' ? 'active' : ''?>">
 						<a href="ass_home<?php echo $ext?>" class="menu-link">
@@ -49,20 +63,6 @@
 						<a href="ass_maps<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-pin-map"></i></span>
 							<span class="menu-text">Asset Locations</span>
-						</a>
-					</div>
-					<?php }?>
-					<?php if($is_ticket){?>
-					<div class="menu-item <?php echo $menu == 'tick' ? 'active' : ''?>">
-						<a href="tick_home<?php echo $ext?>" class="menu-link">
-							<span class="menu-icon"><i class="bi bi-ticket-perforated"></i></span>
-							<span class="menu-text">Tickets</span>
-						</a>
-					</div>
-					<div class="menu-item <?php echo $menu == 'tickloc' ? 'active' : ''?>">
-						<a href="tick_maps<?php echo $ext?>" class="menu-link">
-							<span class="menu-icon"><i class="bi bi-pin-map-fill"></i></span>
-							<span class="menu-text">Ticket Locations</span>
 						</a>
 					</div>
 					<?php }?>
@@ -268,7 +268,7 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="ticketo<?php echo $ext?>" class="menu-link">
+								<a href="tickets<?php echo $ext?>?o=1" class="menu-link">
 									<div class="menu-text">Open</div>
 								</a>
 							</div>
