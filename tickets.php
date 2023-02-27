@@ -206,9 +206,16 @@ include "inc.menutop.php";
 					<?php echo options($o_tikgrp)?>
 				</select>
 			</div>
+		  </div>
+		  <hr />
+		  <div class="row mb-3 hideme">
 			<div class="form-group col-md-6">
 				<label>Notes</label>
 				<textarea id="note" name="notes" placeholder="..." class="form-control"></textarea>
+			</div>
+			<div class="form-group col-md-6">
+				<label>Attachment</label>
+				<input type="file" id="attc" name="attc" placeholder="..." class="form-control">
 			</div>
 		  </div>
 		  
@@ -261,6 +268,7 @@ include "inc.menutop.php";
 										<th>Notes</th>
 										<th>Status</th>
 										<th>By</th>
+										<th>Attachment</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -373,11 +381,11 @@ $(document).ready(function(){
 			type: 'POST',
 			url: 'datatable<?php echo $ext?>',
 			data: function (d) {
-				d.cols= '<?php echo base64_encode("dtm,notes,stts,updby"); ?>',
+				d.cols= '<?php echo base64_encode("dtm,notes,stts,updby,attc"); ?>',
 				d.tname= '<?php echo base64_encode("tick_note"); ?>',
 				d.filtereq= 'ticketno',
 				d.ticketno=$("#ticketno").val(),
-				d.x= '-';
+				d.x= 'ticknotes';
 			}
 		},
 		initComplete: function(){

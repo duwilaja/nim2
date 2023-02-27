@@ -130,7 +130,9 @@ if($mn=='tick'){
 		$res=crud($conn,"$fcols","$fvals");
 	}else{
 		if(post('sv')=='UPD'){
-			$sq=sql_insert("tick_note","notes,stts,ticketno",$conn,"dtm,updby","NOW(),'$s_ID'");
+			$upload=upload_file("attc","tickattc/");
+			$attc=$upload[0]?$upload[1]:"";
+			$sq=sql_insert("tick_note","notes,stts,ticketno",$conn,"dtm,updby,attc","NOW(),'$s_ID','$attc'");
 			$r=exec_qry($conn,$sq);
 		}
 		$fcols='updby,updated'; $fvals="'$s_ID',NOW()";
