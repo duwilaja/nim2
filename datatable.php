@@ -188,6 +188,11 @@ while($row = fetch_row($result)){
 		$row[0]=$act;
 		$xx='-';
 	}
+	if($x=="ticknotes"){
+		$act='<a title="Attachment" class="dttbl" href="JavaScript:;" data-fancybox data-type="iframe" data-src="tickattc/'.$row[4].'">'.$row[4].'</a>';
+		$row[4]=$act;
+		$xx='-';
+	}
 	
 	if($x!="-"&&$xx!="-"){ //- means no need to modify first column
 		$row[0]='<a href="#" class="dttbl"  title="Open" data-bs-toggle="modal" data-bs-target="#myModal" onclick="openForm(\''.$x.'\',\''.$row[$col-1].'\');">'.$row[0].'&nbsp;</a>';
