@@ -39,7 +39,7 @@
 					</div>
 					<?php }?>
 					<?php if($is_ticket){?>
-					<div class="menu-item <?php echo $menu == 'htick' ? 'active' : ''?>">
+					<div class="menu-item <?php echo $menu == 'ticks' ? 'active' : ''?>">
 						<a href="tick_home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-ticket-perforated"></i></span>
 							<span class="menu-text">Tickets</span>
@@ -53,7 +53,7 @@
 					</div>
 					<?php }?>
 					<?php if($is_asset){?>
-					<div class="menu-item <?php echo $menu == 'aset' ? 'active' : ''?>">
+					<div class="menu-item <?php echo $menu == 'ass' ? 'active' : ''?>">
 						<a href="ass_home<?php echo $ext?>" class="menu-link">
 							<span class="menu-icon"><i class="bi bi-box-seam"></i></span>
 							<span class="menu-text">Asset</span>

@@ -5,7 +5,7 @@ include "inc.session.php";
 $page_icon="fa fa-home";
 $page_title="Asset";
 $modal_title="Title of Modal";
-$menu="aset";
+$menu="ass";
 
 $breadcrumb="Overview/$page_title";
 
