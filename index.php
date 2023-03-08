@@ -32,7 +32,7 @@ if($user!=''&&$passwd!=''){
 if($loggedin){
 	$hom='';
 	if($is_asset) {$hom="ass_home$ext";}
-	if($is_ticket) {$hom="tik_home$ext";}
+	if($is_ticket) {$hom="tick_home$ext";}
 	if($is_nms) {$hom="home$ext";}
 	
 	if($hom!=''){

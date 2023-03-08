@@ -71,7 +71,8 @@ include "inc.menutop.php";
 										<th>ID</th>
 										<th>Name</th>
 										<th>Brand</th>
-										<th>Status</th>
+										<th>Category</th>
+										<th>Location</th>
 										<th>Warranty Expired</th>
 										
 									</tr>
@@ -230,8 +231,8 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 
-$tname="ass_ets";
-$cols="assid,assname,brand,stts,warexp,rowid";
+$tname="ass_ets a left join ass_brand b on brid=brand left join ass_cat c on catid=cat left join core_location l on locid=loc";
+$cols="assid,assname,brname,catname,name,warexp,a.rowid";
 $csrc="assname";
 
 ?>
