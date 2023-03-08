@@ -38,7 +38,7 @@ include "inc.menutop.php";
 								<div class="row">
 									<div class="col">
 										<div class="">Total</div>
-										<div class="h3 mt-2 mb-2 tot">0 <span class="text-success fs-13 ml-2"></span></div>
+										<div class="h3 mt-2 mb-2 xtot">0 <span class="text-success fs-13 ml-2"></span></div>
 									</div>
 									<div class="feature hidden">
 										<a href="n_location<?php echo $ext?>">
@@ -60,7 +60,7 @@ include "inc.menutop.php";
 								<div class="row">
 									<div class="col">
 										<div class="">Active</div>
-										<div class="h3 mt-2 mb-2 active">0 <span class="text-success fs-13 ml-2"></span></div>
+										<div class="h3 mt-2 mb-2 xactive">0 <span class="text-success fs-13 ml-2"></span></div>
 									</div>
 									<div class="feature hidden">
 										<a href="n_location<?php echo $ext?>?status=1">
@@ -79,7 +79,7 @@ include "inc.menutop.php";
 								<div class="row">
 									<div class="col">
 										<div class="">Standby</div>
-										<div class="h3 mt-2 mb-2 standby">0 <span class="text-success fs-13 ml-2"></span></div>
+										<div class="h3 mt-2 mb-2 xstandby">0 <span class="text-success fs-13 ml-2"></span></div>
 									</div>
 									<div class="feature hidden">
 										<a href="n_location<?php echo $ext?>?status=0">
@@ -98,7 +98,7 @@ include "inc.menutop.php";
 								<div class="row">
 									<div class="col">
 										<div class="">Inactive</div>
-										<div class="h3 mt-2 mb-2 inactive">0 <span class="text-success fs-13 ml-2"></span></div>
+										<div class="h3 mt-2 mb-2 xinactive">0 <span class="text-success fs-13 ml-2"></span></div>
 									</div>
 									<div class="feature hidden">
 										<a href="n_location<?php echo $ext?>?status=0">
@@ -401,10 +401,10 @@ function gettot(){
 				var tot=0;
 				for(var i=0;i<json['msgs'].length;i++){
 					var d=json['msgs'][i];
-					$("."+d['stts']).html(d['tot']);
+					$(".x"+d['stts']).html(d['tot']);
 					tot+=parseInt(d['tot']);
 				}
-				$(".tot").html(tot);
+				$(".xtot").html(tot);
 			}else{
 				log(json['msgs']);
 			}
@@ -425,7 +425,7 @@ var mytbl=$(divid).DataTable({
 	serverSide: true,
 	processing: true,
 	ordering: true,
-	paging: false,
+	paging: true,
 	lengthChange: false,
 	info: false,
 	order: ord,
