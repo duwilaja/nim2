@@ -137,6 +137,11 @@
 									<span class="menu-text">UP/Down</span>
 								</a>
 							</div>
+							<div class="menu-item">
+								<a href="r_traffic<?php echo $ext?>" class="menu-link">
+									<span class="menu-text">Traffic</span>
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="menu-item has-sub">
