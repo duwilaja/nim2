@@ -16,7 +16,7 @@ include "inc.menutop.php";
 
 include "lib_inc.db.php";
 $conn=connect();
-$sql="select device_id, name, hostname from devices join nimdb.core_node on hostname=host";
+$sql="select device_id, name, hostname from devices join nimdb.core_node on hostname=host order by name";
 $rs=fetch_all(exec_qry($conn,$sql));
 disconnect($conn);
 
@@ -41,7 +41,7 @@ disconnect($conn);
 				<div class="mb-3">
 					<div class="card-body">
 						<div class="row">
-							<div class="col-md-2"><div class="input-group">
+							<div class="col-md-6"><div class="input-group">
 								<select id="hos" class="form-control">
 									<option value="">--- Please Select ---</option>
 									<?php echo options($rs)?>

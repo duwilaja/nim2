@@ -47,6 +47,7 @@ include "inc.menutop.php";
 								<thead>
 									<tr>
 										<th>Host</th>
+										<th>Name</th>
 										<th>sysName</th>
 										<th>sysDescr</th>
 										<th>sysContact</th>
@@ -72,9 +73,9 @@ include "inc.db.php";
 
 $where="";//get("loc")==""?"":"loc='".get("loc")."'";
 
-$tname="devices";
-$cols="hostname,sysName,sysDescr,sysContact,os,concat(upper(status_reason),' ',if(status=1,'UP','DOWN')) as stt,device_id";
-$csrc="hostname,sysName";
+$tname="devices join nimdb.core_node on host=hostname";
+$cols="hostname,name,sysName,sysDescr,sysContact,os,concat(upper(status_reason),' ',if(status=1,'UP','DOWN')) as stt,device_id";
+$csrc="hostname,sysName,name";
 $grpby="";
 
 ?>
