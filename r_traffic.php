@@ -3,9 +3,9 @@ include "inc.common.php";
 include "inc.session.php";
 
 $page_icon="fa fa-table";
-$page_title="Location";
+$page_title="Traffic";
 $modal_title="";
-$card_title="Traffics";
+$card_title="Traffic";
 
 $menu="-";
 
