@@ -41,6 +41,14 @@ disconnect($conn);
 				<div class="mb-3">
 					<div class="card-body">
 						<div class="row">
+							<div class="col-md-2"><div class="input-group">
+								<input type="text" id="df" placeholder="From Date" class="form-control datepicker">
+								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+							</div></div>
+							<div class="col-md-2"><div class="input-group">
+								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker">
+								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
+							</div></div>
 							<div class="col-md-6"><div class="input-group">
 								<select id="hos" class="form-control">
 									<option value="">--- Please Select ---</option>
@@ -91,6 +99,8 @@ include "inc.js.php";
 var hosts=<?php echo json_encode($rs)?>;
 $(document).ready(function(){
 	page_ready();
+	datepicker(true);
+	
 });
 function gethos(i){
 	var rr='';
@@ -102,7 +112,7 @@ function gethos(i){
 function  submit_r_trfc(){
 	var id=$("#hos").val();
 	var h=gethos(id);
-	if(h!='') get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id},".ldr-inter","#isi-inter");
+	if(h!='') get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id,df:$("#df").val(),dt:$("#dt").val()},".ldr-inter","#isi-inter");
 }
 </script>
 

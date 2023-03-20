@@ -10,6 +10,8 @@ include "inc.db.php";
 $h=get("h");
 $g=get("g");
 $l=get("l");
+$df=get("f")==''?date('Y-m-d'):base64_decode(get("f"));
+$dt=get("t")==''?date('Y-m-d'):base64_decode(get("t"));
 
 $page_icon="fa fa-home";
 $page_title="$h/$g";
@@ -40,11 +42,11 @@ include "inc.head.php";
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-2"><div class="input-group">
-								<input type="text" id="df" placeholder="From Date" class="form-control datepicker" value="<?php echo date("Y-m-d")?>">
+								<input type="text" id="df" placeholder="From Date" class="form-control datepicker" value="<?php echo $df?>">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
 							</div></div>
 							<div class="col-md-2"><div class="input-group">
-								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker" value="<?php echo date("Y-m-d")?>">
+								<input type="text" id="dt" placeholder="To Date" class="form-control datepicker" value="<?php echo $dt?>">
 								<div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
 							</div></div>
 							&nbsp;&nbsp;&nbsp;
