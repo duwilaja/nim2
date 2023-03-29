@@ -179,6 +179,7 @@ function openForm(q='',id=0,f='#myf',fid="#rowid"){
 		$("#bdel").hide();
 		//datepicker();
 		selectpicker();
+		if(typeof(openformcallback)=='function') openformcallback(q);
 	}else{
 		$("#bdel").show();
 		//modal();
@@ -194,6 +195,7 @@ function openForm(q='',id=0,f='#myf',fid="#rowid"){
 					});
 					//datepicker();
 					selectpicker();
+					if(typeof(openformcallback)=='function') openformcallback(q,json);
 					$("#modal_process").modal("hide");
 				}else{
 					setTimeout(function(){$(".modal_form").modal("hide")},500);
