@@ -98,7 +98,7 @@ disconnect($conn);
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="host,name,loc,grp,typ,net,snmp,snmp_community,snmp_ver,sla" />
+<input type="hidden" name="cols" value="host,name,loc,grp,typ,net,snmp,snmp_community,snmp_ver,sla,snmp_v3_user,snmp_v3_pass" />
 <input type="hidden" name="tname" value="core_node" />
 		
 		  <div class="row mb-3">
@@ -145,34 +145,46 @@ disconnect($conn);
 		  </div>
 		  <div class="row mb-3">
 			<div class="form-group col-md-6">
-				<label>SNMP Monitor</label>
-				<select class="form-control " id="snmp" name="snmp">
-					<option value="0">No</option>
-					<option value="1">Yes</option>
-				</select>
-			</div>
-			<div class="form-group col-md-6">
-				<label>SNMP Community</label>
-				<input type="text" id="snmp_community" name="snmp_community" placeholder="..." class="form-control">
-			</div>
-		  </div>
-		  <div class="row mb-3">
-			<div class="form-group col-md-6">
-				<label>SNMP Version</label>
-				<select class="form-control " id="snmp_ver" name="snmp_ver">
-					<option value=""></option>
-					<option value="v2c">v2c</option>
-					<option value="v1">v1</option>
-				</select>
-			</div>
-			<div class="form-group col-md-6">
 				<label>SLA</label>
 				<select class="form-control" name="sla" id="sla">
 				<option value="0">Default 24/7</option>
 				<?php echo options($o_sla) ?>
 				</select>
 			</div>
+			<div class="form-group col-md-6">
+				<label>SNMP Monitor</label>
+				<select class="form-control " id="snmp" name="snmp" onchange="snmp_changed(this.value);">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</select>
+			</div>
 		  </div>
+		  <div class="row mb-3 snmpyes">
+			<div class="form-group col-md-6">
+				<label>SNMP Version</label>
+				<select class="form-control " id="snmp_ver" name="snmp_ver" onchange="">
+					<option value=""></option>
+					<option value="v2c">v2c</option>
+					<option value="v1">v1</option>
+					<option value="v3">v3</option>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label>SNMP v1/v2c Community</label>
+				<input type="text" id="snmp_community" name="snmp_community" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  <div class="row mb-3 snmpyes">
+			<div class="form-group col-md-6">
+				<label>SNMP v3 User</label>
+				<input type="text" id="snmp_v3_user" name="snmp_v3_user" placeholder="..." class="form-control">
+			</div>
+			<div class="form-group col-md-6">
+				<label>SNMP v3 Password</label>
+				<input type="text" id="snmp_v3_pass" name="snmp_v3_pass" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  
 		  <div class="row mb-3 hidden">
 			<div class="form-group col-md-6">
 				<label>SNMP Discovery</label>
@@ -293,6 +305,17 @@ $(document).ready(function(){
 
 function reloadtbl(){
 	mytbl.ajax.reload();
+}
+
+function openformcallback(q='',json=''){
+	snmp_changed($("#snmp").val());
+}
+function snmp_changed(tv){
+	if(tv=="1"){
+		$(".snmpyes").show();
+	}else{
+		$(".snmpyes").hide();
+	}
 }
 </script>
 
