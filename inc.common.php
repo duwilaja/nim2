@@ -2,7 +2,7 @@
 $ext=".php";
 date_default_timezone_set("Asia/Jakarta");
 
-$is_nms=false;
+$is_nms=true;
 $is_ticket=true;
 $is_asset=true;
 
