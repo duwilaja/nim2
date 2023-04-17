@@ -74,7 +74,7 @@
 	$(".container").addClass("inner-body");
 	</script>
 	<!-- my own custom js -->
-	<script src="js/custom.hud.js"></script>
+	<script src="js/custom.spruha.js"></script>
 	
 	<!-- this page's JavaScript -->
 	

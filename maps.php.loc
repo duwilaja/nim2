@@ -32,7 +32,7 @@ include "inc.menutop.php";
 			<!-- ROW OPEN -->
 			<div class="row">
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -54,7 +54,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -73,7 +73,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -92,7 +92,7 @@ include "inc.menutop.php";
 					</div>
 				</div><!-- COL END -->
 				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-					<div class="card ">
+					<div class="card mb-3">
 						<div class="card-body">
 							<div class="card-order">
 								<div class="row">
@@ -113,9 +113,15 @@ include "inc.menutop.php";
 
 			<div class="row">
 				<div class="col-12">
-					<div class="card">
+					<div class="card mb-3">
 						<div class="card-body">
-							<div id="map" style="height:450px; z-index: 1;"></div>
+							<div id="map" style="height:450px; z-index: 1; display:none;"></div>
+							<!--img width="" src="img/peta.svg" /-->
+							<div style="position:relative;">
+							<img id="petaku" usemap="#features" src="img/denah.jpg" alt="denah">
+							<div id="mylayers"></div>
+							</div>
+							<map name="features" id="myfeatures"></map>
 						</div>
 					</div>
 				</div>
@@ -128,6 +134,7 @@ include "inc.menutop.php";
 include "inc.foot.php";
 include "inc.js.php";
 ?>
+<script type="text/javascript" src="js/jquery.maphilight.js"></script>
 <script>
 markerClickFunction = function(id) {
 		return function(e) {
@@ -149,14 +156,16 @@ $(document).ready(function(){
 	displayClock();
 	
 	getData('onoff','maps-onoff');
-	widget_map();
-	
+	//widget_map();
+	widget_denah();
 });
 
+function widget_denah(){
+	get_loc();
+}
 
 var map;
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var err='';
 
 function displayClock(){
 	var d=new Date();
@@ -181,15 +190,17 @@ function widget_map(){
 	get_loc();
 }
 
-function get_loc(){
+function get_loc(q=''){
 	$.ajax({
 		type: 'POST',
 		url: 'dataget'+ext,
 		data: {q:'map',id:0},
 		success: function(data){
 			var json = JSON.parse(data);
+			log(json);
 			if(json['code']=='200'){
-				draw_map(json['msgs']);
+				//draw_map(json['msgs']);
+				loadDenah(json['msgs']);
 			}else{
 				log(json['msgs']);
 			}
@@ -205,27 +216,39 @@ function draw_map(data){
 		
 		for (var i = 0; i < data.length; i++) {
 			var a = data[i];
-			var title = a['name']+'\nTotal: '+a['cnt']+'\nON: '+a['onoff']+'\nOFF: '+a['off'];;
+			var title = a['name'];
 			var color = a['onoff']>0?"green":"red";
 			var icon = L.AwesomeMarkers.icon({icon: 'server', prefix: 'fa', markerColor: color});
 			
-			if(isNaN(data[i]['lat'])||isNaN(data[i]['lng'])){
-				err+=data[i]['name']+'/';
-			}else{
-				var marker = L.marker(new L.LatLng(a['lat'], a['lng']), { title: title, icon: icon });
-				
-				var fn=markerClickFunction(a['locid']);
-				marker.on('click', fn);
-				
-				markers.addLayer(marker);
-			}
+			var marker = L.marker(new L.LatLng(a['lat'], a['lng']), { title: title, icon: icon });
+			
+			var fn=markerClickFunction(a['locid']);
+			marker.on('click', fn);
+			
+			markers.addLayer(marker);
 		}
 
 		map.addLayer(markers);
+}
+
+
+function loadDenah(mydata){
+	var area='';
+	var layers='';
+	for(var i=0;i<mydata.length;i++){
+		var d=mydata[i];
+		var ttl=d['name']+'\nTotal: '+d['cnt']+'\nON: '+d['onoff']+'\nOFF: '+d['off'];
 		
-		if(err!='') {
-			alert('Error: '+err);
-		}
+		var color='ffff00'; //kuning
+		if(d['onoff']==d["cnt"]) color='00ff00'; //hijau semua on
+		if(d['off']==d['cnt']) color='ff0000'; //merah semua off
+		
+		area+='<area id="'+d['locid']+'" shape="circle" coords="'+d['lat']+','+d['lng']+',7" href="#" title="'+ttl+'" alt="" data-maphilight=\'{"strokeColor":"000000","strokeWidth":1,"fillColor":"'+color+'","fillOpacity":"0.5","alwaysOn":true}\'>';
+		//layers+='<div style="color:white;position:absolute;top:'+d['lng']+'px; left:'+d['lat']+'px;">'+d['locid']+'</div>';
+	}
+	$("#myfeatures").html(area);
+	//$("#mylayers").html(layers);
+	$('#petaku').maphilight();
 }
 
 </script>
