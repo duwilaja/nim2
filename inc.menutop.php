@@ -1,3 +1,3 @@
 <?php
-include "inc.menuside.php";
+include "inc.menutop.$template.php";
 ?>

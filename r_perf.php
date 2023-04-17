@@ -7,7 +7,7 @@ $page_title="Performance";
 $modal_title="";
 $card_title="Performance Report";
 
-$menu="-";
+$menu="rperf";
 
 $breadcrumb="Reports/$page_title";
 

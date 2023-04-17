@@ -162,7 +162,7 @@ while($row = fetch_row($result)){
 		$row[$col-2]=$act;
 	}
 	
-	if($x=="ndevice"){
+	if($x=="psnmpd"){
 		$h=$row[0];
 		$idx=$row[$col-1];
 		$act='<a title="Overview" class="dttbl" href="JavaScript:;" data-fancybox data-type="iframe" data-src="lib_device'.$ext.'?h='.$h.'&idx='.$idx.'">'.$h.'</a>';

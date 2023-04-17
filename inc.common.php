@@ -6,6 +6,8 @@ $is_nms=false;
 $is_ticket=true;
 $is_asset=true;
 
+$template="spruha"; //hud , spruha , aronox
+
 $theme="hor-skin/horizontal-dark.css"; //hor-skin/hor-skin1.css
 $theme="hor-skin/hor-skin1.css";
 

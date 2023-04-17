@@ -7,7 +7,7 @@ $page_title="SNMP";
 $modal_title="";
 $card_title="SNMP Monitored Devices";
 
-$menu="ndevice";
+$menu="psnmpd";
 
 $breadcrumb="Objects/$page_title";
 

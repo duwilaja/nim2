@@ -381,8 +381,8 @@ function barChart(databar){
 				datasets: [{
 					label: 'Total',
 					data: datas,//[37,31,36,34,43,31],
-					backgroundColor: 'rgba('+ app.color.themeRgb +', .5)',
-					borderColor: app.color.theme,
+					backgroundColor: 'rgba('+ randomColor() +', .5)',
+					borderColor: randomColor(),
 					borderWidth: 1.5
 				}]
 			}
