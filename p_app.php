@@ -7,7 +7,7 @@ $page_title="Applications";
 $modal_title="";
 $card_title="Monitored Applications";
 
-$menu="-";
+$menu="papp";
 
 $breadcrumb="Objects/$page_title";
 
@@ -98,7 +98,7 @@ $(document).ready(function(){
 				d.csrc= '<?php echo base64_encode($csrc); ?>',
 				d.where= '<?php echo base64_encode($where); ?>',
 				d.grpby= '<?php echo base64_encode($grpby); ?>',
-				d.x= '<?php echo $menu?>';
+				d.x= '-';
 			}
 		},
 		initComplete: function(){

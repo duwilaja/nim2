@@ -7,7 +7,7 @@ $page_title="Location";
 $modal_title="";
 $card_title="Location Report";
 
-$menu="-";
+$menu="rlocation";
 
 $breadcrumb="Reports/$page_title";
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
 				d.tname= '<?php echo base64_encode($tname); ?>',
 				d.csrc= '<?php echo base64_encode($csrc); ?>',
 				d.grpby= '<?php echo base64_encode($grpby); ?>',
-				d.x= '<?php echo $menu?>';
+				d.x= '<?php echo "-"?>';
 			}
 		},
 		initComplete: function(){

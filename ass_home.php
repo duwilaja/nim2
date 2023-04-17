@@ -31,7 +31,7 @@ include "inc.menutop.php";
 		
 			<!-- ROW OPEN -->
 			<div class="row">
-				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
 					<div class="card">
 						<div class="card-body">
 							<div class="card-order">
@@ -110,7 +110,7 @@ include "inc.menutop.php";
 						</div>
 					</div>
 				</div><!-- COL END -->
-				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+				<div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
 					<div class="card ">
 						<div class="card-body">
 							<div class="card-order">
@@ -381,8 +381,8 @@ function barChart(databar){
 				datasets: [{
 					label: 'Total',
 					data: datas,//[37,31,36,34,43,31],
-					backgroundColor: 'rgba('+ app.color.themeRgb +', .5)',
-					borderColor: app.color.theme,
+					backgroundColor: 'rgba('+ randomColor() +', .5)',
+					borderColor: randomColor(),
 					borderWidth: 1.5
 				}]
 			}
