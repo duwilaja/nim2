@@ -45,8 +45,8 @@
 						</a>
 						<ul class="nav-sub">
 							<li class="side-menu-label1"><a href="javascript:void(0)">Ticketing</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link ticks" href="tick_home<?php echo $ext?>">Dashboard</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link tickloc" href="tick_maps<?php echo $ext?>">Map View</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link ticks" href="tick_hom<?php echo $ext?>">Dashboard</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link tickloc" href="tick_mapsx<?php echo $ext?>">Map View</a></li>
 						</ul>
 					</li>
 					<?php }?>
@@ -60,8 +60,8 @@
 						</a>
 						<ul class="nav-sub">
 							<li class="side-menu-label1"><a href="javascript:void(0)">Asset</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link ass" href="ass_home<?php echo $ext?>">Dashboard</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link asetloc" href="ass_maps<?php echo $ext?>">Map View</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link ass" href="ass_hom<?php echo $ext?>">Dashboard</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link asetloc" href="ass_mapsx<?php echo $ext?>">Map View</a></li>
 						</ul>
 					</li>
 					<?php }?>
@@ -150,7 +150,7 @@
 						</a>
 						<ul class="nav-sub">
 							<li class="side-menu-label1"><a href="javascript:void(0)">Master</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link mlov" href="m_loc<?php echo $ext?>">Locations</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link mlov" href="tick_loc<?php echo $ext?>">Locations</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link muser" href="m_serv<?php echo $ext?>">Services</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link muser" href="m_ticat<?php echo $ext?>">Categories</a></li>
 						</ul>
@@ -194,7 +194,7 @@
 						</a>
 						<ul class="nav-sub">
 							<li class="side-menu-label1"><a href="javascript:void(0)">Master</a></li>
-							<li class="nav-sub-item"><a class="nav-sub-link mlov" href="m_loc<?php echo $ext?>">Locations</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link mlov" href="ass_loc<?php echo $ext?>">Locations</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link muser" href="m_brand<?php echo $ext?>">Brand</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link muser" href="m_ascat<?php echo $ext?>">Categories</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link muser" href="m_ass<?php echo $ext?>">Assets</a></li>

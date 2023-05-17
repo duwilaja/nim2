@@ -67,8 +67,8 @@ function log(s){
 }
 
 function page_ready(){
-	$(".nav-item").removeClass("active");
-	$("."+page).addClass("active");//.parent().parent().parent().addClass('active');;
+	//$(".nav-item").removeClass("active");
+	//$("."+page).addClass("active");//.parent().parent().parent().addClass('active');;
 	
 	//notify();
 }
