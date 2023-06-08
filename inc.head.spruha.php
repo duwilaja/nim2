@@ -52,6 +52,9 @@
 		.form-control:not([multiple]) option {
 			color: #000;
 		}
+		.text-white{
+			color: #aaa;
+		}
 		</style>
 
 	</head>
