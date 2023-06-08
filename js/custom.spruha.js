@@ -69,7 +69,7 @@ function log(s){
 function page_ready(){
 	//$(".nav-item").removeClass("active");
 	//$("."+page).addClass("active");//.parent().parent().parent().addClass('active');;
-	
+	$(".text-white").removeClass("text-white").addClass("text-whitex");
 	//notify();
 }
 
