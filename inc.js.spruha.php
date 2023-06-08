@@ -72,6 +72,7 @@
 	$("i.fe-chevron-up").hide();
 	$(".app-content").addClass("main-container").addClass("container-fluid");
 	$(".container").addClass("inner-body");
+	$(".text-white").removeClass("text-white").addClass("text-whitex");
 	</script>
 	<!-- my own custom js -->
 	<script src="js/custom.spruha.js"></script>
