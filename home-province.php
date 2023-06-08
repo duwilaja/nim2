@@ -10,7 +10,7 @@ $conn=connect();
 
 $whr=($s_GRP=='')?"1=1":"(grp='$s_GRP')";
 
-$rs=exec_qry($conn,"select if(prov='' or prov is null,'Undefined',prov) as prv, count(host) as cnt from core_node n left join core_location l on n.loc=l.locid where $whr group by prov order by prov");
+$rs=exec_qry($conn,"select if(prov='' or prov is null,'Undefined',prov) as prv, count(host) as cnt from core_node n left join core_location l on n.loc=l.locid where $whr group by prv order by prv");
 $lists=fetch_all($rs);
 
 disconnect($conn);
