@@ -251,7 +251,7 @@ include "inc.menutop.php";
 
 <!-- Modal Notes -->
 <div class="modal fade modal_form" id="modal_notes" tabindex="1" role="dialog" aria-labelledby="formModalLabelNotes" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document" style="background: #303030;">
+	<div class="modal-dialog modal-lg" role="document" style="background: #303030; max-width: 1200px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="formModalLabelNotes">Notes</h5>
