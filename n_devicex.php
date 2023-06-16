@@ -102,11 +102,11 @@ disconnect($conn);
 									<tr>
 										<th>Host</th>
 										<th>Name</th>
-										<th>Status</th>
 										<th>Network</th>
 										<th>Location</th>
 										<th>Group</th>
 										<th>Type</th>
+										<th>Status</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -132,7 +132,7 @@ $prov=get("prov")==""?"1=1":"prov='".get("prov")."'";
 $where = "$loc and $status and $prov";
 
 $tname="core_node n left join core_status s on n.host=s.host left join core_location l on n.loc=l.locid";
-$cols="n.host,n.name,if(status=1,'UP','DOWN') as stt,net,loc,grp,typ,n.rowid";
+$cols="n.host,n.name,net,loc,grp,typ,if(status=1,'UP','DOWN') as stt,n.rowid";
 $csrc="n.host,n.name,net,loc,grp,typ";
 $grpby="";
 
@@ -192,27 +192,6 @@ $(document).ready(function(){
 
 function reloadtbl(){
 	mytbl.ajax.reload();
-}
-
-//dtm,loc,h,d,cat,svc,stts,grp,notes
-function ticks(name,loc){
-	var d =new Date();
-	var dtm=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
-	var cols='dtm,loc,h,d,cat';
-	var tname='tick_ets';
-	$.ajax({
-		type: 'POST',
-		url: 'datasave'+ext,
-		data: {sv:'NEW',mnu:'tick',rowid:0,cols:cols,tname:tname,dtm:dtm,loc:loc,h:name,d:'Device down',cat:'offline'},
-		success: function(data){
-			var json = JSON.parse(data);
-			alrt(json['msgs'],'success',json['ttl']);
-		},
-		error: function(xhr){
-			//modal('Error','Please check your connection');
-			alrt('Could not execute command','error','Error');
-		}
-	});
 }
 
 </script>
