@@ -29,6 +29,8 @@
     <script src="vendor/datatables.net-bs4/dataTables.bootstrap4.js"></script>
     <script src="vendor/datatables-buttons/js/dataTables.buttons.min.js"></script>
     <script src="vendor/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendor/datatables-buttons/js/pdfmake.min.js"></script>
+    <script src="vendor/datatables-buttons/js/vfs_fonts.js"></script>
     <script src="vendor/datatables-buttons/js/buttons.html5.min.js"></script>
 	
     <script src="vendor/swal2/sweetalert.min.js"></script>
