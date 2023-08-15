@@ -105,7 +105,7 @@ $(document).ready(function(){
 		serverSide: true,
 		processing: true,
 		searching: false,
-		buttons: ['copy', 'csv'],
+		buttons: ['copy', 'csv','pdfHtml5'],
 		lengthMenu: [[10,50,100,500,-1],["10","50","100","500","All"]],
 		ajax: {
 			type: 'POST',
