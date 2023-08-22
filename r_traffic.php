@@ -57,6 +57,7 @@ disconnect($conn);
 							</div></div>
 							&nbsp;&nbsp;&nbsp;
 							<button type="button" onclick="submit_r_trfc();" class="btn btn-primary col-md-1">Submit</button>
+							<button type="button" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn btn-success col-md-1 hidden">PDF</button>
 						</div>
 					</div>
 				</div>
@@ -97,6 +98,9 @@ include "inc.foot.php";
 include "inc.js.php";
 ?>
 
+<script type="text/javascript" src="js/pdf/jspdf.min.js"></script>
+<script type="text/javascript" src="js/pdf/html2canvas.js"></script>
+
 <script>
 var hosts=<?php echo json_encode($rs)?>;
 $(document).ready(function(){
@@ -122,7 +126,38 @@ function  submit_r_trfc(){
 	var id=$("#hos").val();
 	$("#titel").html(gettitel());
 	var h=gethos(id);
-	if(h!='') get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id,df:$("#df").val(),dt:$("#dt").val()},".ldr-inter","#isi-inter");
+	if(h!='') {
+		get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id,df:$("#df").val(),dt:$("#dt").val()},".ldr-inter","#isi-inter");
+		$("#btnpdf").show();
+	}
+}
+
+//Create PDf from HTML...
+function CreatePDFfromHTML() {
+	var id=$("#hos").val();
+	var hos=gethos(id);
+	
+    var HTML_Width = $("#prin").width();
+    var HTML_Height = $("#prin").height();
+    var top_left_margin = 15;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+    html2canvas($("#prin")[0]).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+        }
+        pdf.save(hos+"_traffic.pdf");
+        //$(".html-content").hide();
+    });
 }
 </script>
 
