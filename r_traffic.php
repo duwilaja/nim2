@@ -82,7 +82,9 @@ disconnect($conn);
 								<div class="sk-cube sk-cube9"></div>
 							</div>
 						</div>
+						<div id="prin"><h4 id="titel"></h4>
 						<div id="isi-inter"></div>
+						</div>
 					
 					</div>
 				</div>
@@ -109,8 +111,16 @@ function gethos(i){
 	}
 	return rr;
 }
+function gettitel(i){
+	var rr='';
+	for(var ii=0;ii<hosts.length;ii++){
+		if(hosts[ii][0]==i) rr=hosts[ii][2]+'/'+hosts[ii][1];
+	}
+	return rr;
+}
 function  submit_r_trfc(){
 	var id=$("#hos").val();
+	$("#titel").html(gettitel());
 	var h=gethos(id);
 	if(h!='') get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id,df:$("#df").val(),dt:$("#dt").val()},".ldr-inter","#isi-inter");
 }
