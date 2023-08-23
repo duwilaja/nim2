@@ -55,8 +55,8 @@ disconnect($conn);
 									<?php echo options($rs)?>
 								</select>
 							</div></div>
-							&nbsp;&nbsp;&nbsp;
-							<button type="button" onclick="submit_r_trfc();" class="btn btn-primary col-md-1">Submit</button>
+							&nbsp;
+							<button type="button" onclick="submit_r_trfc();" class="btn btn-primary col-md-1">Submit</button>&nbsp;
 							<button type="button" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn btn-success col-md-1 hidden">PDF</button>
 						</div>
 					</div>
@@ -70,7 +70,7 @@ disconnect($conn);
 						</div>
 					</div>
 					<div class="card-body">
-						<div class="dimmer active ldr-inter">
+						<div class="dimmer active ldr-inter hidden">
 							<div class="sk-cube-grid">
 								<div class="sk-cube sk-cube1"></div>
 								<div class="sk-cube sk-cube2"></div>
@@ -98,8 +98,8 @@ include "inc.foot.php";
 include "inc.js.php";
 ?>
 
-<script type="text/javascript" src="js/pdf/jspdf.min.js"></script>
-<script type="text/javascript" src="js/pdf/html2canvas.js"></script>
+<script type="text/javascript" src="vendor/pdf/jspdf.min.js"></script>
+<script type="text/javascript" src="vendor/pdf/html2canvas.js"></script>
 
 <script>
 var hosts=<?php echo json_encode($rs)?>;
