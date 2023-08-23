@@ -124,7 +124,7 @@ function gettitel(i){
 }
 function  submit_r_trfc(){
 	var id=$("#hos").val();
-	$("#titel").html(gettitel());
+	$("#titel").html(gettitel(id));
 	var h=gethos(id);
 	if(h!='') {
 		get_content("lib_device_inter<?php echo $ext?>",{h:h,idx:id,df:$("#df").val(),dt:$("#dt").val()},".ldr-inter","#isi-inter");
