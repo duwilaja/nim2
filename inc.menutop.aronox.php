@@ -36,6 +36,7 @@
 										<li aria-haspopup="true"><a href="r_perf<?php echo $ext?>">Performance</a></li>
 										<li aria-haspopup="true"><a href="r_severity<?php echo $ext?>">Severity</a></li>
 										<li aria-haspopup="true"><a href="r_updown<?php echo $ext?>">Up/Down</a></li>
+										<li aria-haspopup="true"><a href="r_traffic<?php echo $ext?>">Traffic</a></li>
 									</ul>
 								</li>
 	<?php if($s_LVL<2){ ?>
