@@ -53,6 +53,7 @@ include "inc.menutop.php";
 										<th>Event</th>
 										<th>Mail To (; separator)</th>
 										<th>Telegram To</th>
+										<th>API</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -79,7 +80,7 @@ include "inc.menutop.php";
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="mailto,teleto" />
+<input type="hidden" name="cols" value="mailto,teleto,api" />
 <input type="hidden" name="tname" value="core_events" />
 					
 		  <div class="row mb-3">
@@ -98,6 +99,15 @@ include "inc.menutop.php";
 			<div class="form-group col-md-12">
 				<label>Telegram Chat ID</label>
 				<input type="text" id="teleto" name="teleto" placeholder="..." class="form-control">
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-12">
+				<label>API</label>
+				<select id="api" name="api" placeholder="..." class="form-control">
+					<option value="0">Disable</option>
+					<option value="1">Enable</option>
+				</select>
 			</div>
 		  </div>
 		  <div class="row mb-3 hidden">
@@ -136,7 +146,7 @@ include "inc.foot.php";
 include "inc.js.php";
 
 $tname="core_events";
-$cols="eventid,mailto,teleto,rowid";
+$cols="eventid,mailto,teleto,api,rowid";
 $csrc="eventid";
 
 ?>

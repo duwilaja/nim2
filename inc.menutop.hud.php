@@ -195,7 +195,7 @@
 							</div>
 							<div class="menu-item">
 								<a href="m_bg<?php echo $ext?>" class="menu-link">
-									<span class="menu-text">Reload Controls</span>
+									<span class="menu-text">Controls</span>
 								</a>
 							</div>
 						</div>

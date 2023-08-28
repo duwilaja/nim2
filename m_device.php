@@ -28,6 +28,10 @@ $rs=exec_qry($conn,"select val,txt from core_lov where typ='devicetype' order by
 $o_typ=fetch_all($rs);
 $rs=exec_qry($conn,"select val,txt from core_lov where typ='network' order by txt");
 $o_net=fetch_all($rs);
+$rs=exec_qry($conn,"select val,txt from core_lov where typ='service' order by txt");
+$o_svc=fetch_all($rs);
+$rs=exec_qry($conn,"select val,txt from core_lov where typ='bandwidth' order by txt");
+$o_bw=fetch_all($rs);
 disconnect($conn);
 
 ?>
@@ -98,7 +102,7 @@ disconnect($conn);
 <input type="hidden" name="rowid" id="rowid" value="0">
 <input type="hidden" name="mnu" value="<?php echo $menu?>">
 <input type="hidden" id="sv" name="sv" />
-<input type="hidden" name="cols" value="host,name,loc,grp,typ,net,snmp,snmp_community,snmp_ver,sla,snmp_v3_user,snmp_v3_pass" />
+<input type="hidden" name="cols" value="host,name,loc,grp,typ,net,snmp,snmp_community,snmp_ver,sla,snmp_v3_user,snmp_v3_pass,svc,bw,lan,wan,sid" />
 <input type="hidden" name="tname" value="core_node" />
 		
 		  <div class="row mb-3">
@@ -141,6 +145,36 @@ disconnect($conn);
 					<option value="">-</option>
 					<?php echo options($o_net)?>
 				</select>
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-6">
+				<label>Service</label>
+				<select class="form-control " id="svc" name="svc">
+					<option value="">-</option>
+					<?php echo options($o_svc)?>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label>Bandwidth</label>
+				<select class="form-control " id="bw" name="bw">
+					<option value="">-</option>
+					<?php echo options($o_bw)?>
+				</select>
+			</div>
+		  </div>
+		  <div class="row mb-3">
+			<div class="form-group col-md-4">
+				<label>IP LAN</label>
+				<input type="text" id="lan" name="lan" placeholder="..." class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+				<label>IP WAN</label>
+				<input type="text" id="wan" name="wan" placeholder="..." class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+				<label>SID</label>
+				<input type="text" id="sid" name="sid" placeholder="..." class="form-control">
 			</div>
 		  </div>
 		  <div class="row mb-3">

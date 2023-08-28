@@ -43,6 +43,7 @@
 								<li aria-haspopup="true"><a href="#" class="sub-icon"><i class="fa fa-cogs"></i> Setup <i class="fa fa-angle-down horizontal-icon"></i></a>
 									<ul class="sub-menu">
 			<?php if($s_LVL==0){ ?>
+										<li aria-haspopup="true"><a href="m_lov<?php echo $ext?>">LoV</a></li>
 										<li aria-haspopup="true"><a href="m_user<?php echo $ext?>">User</a></li>
 			<?php }?>
 										<li aria-haspopup="true"><a href="m_severity<?php echo $ext?>">Severity</a></li>
@@ -51,7 +52,8 @@
 										<li aria-haspopup="true"><a href="m_device<?php echo $ext?>">Device</a></li>
 										<li aria-haspopup="true"><a href="m_topo<?php echo $ext?>">Topology</a></li>
 										<!--li aria-haspopup="true"><a href="m_ip<?php echo $ext?>">IP Scan</a></li-->
-										<li aria-haspopup="true"><a href="m_bg<?php echo $ext?>">Background Job</a></li>
+										<li aria-haspopup="true"><a href="m_events<?php echo $ext?>">Event</a></li>
+										<li aria-haspopup="true"><a href="m_bg<?php echo $ext?>">Controls</a></li>
 									</ul>
 								</li>
 	<?php }?>
