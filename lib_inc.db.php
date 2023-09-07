@@ -5,9 +5,9 @@ $production = false;
 function connect($prod=false){
 //prod
 $env['prod']['server'] = 'localhost';
-$env['prod']['db'] = 'nmsdb';
-$env['prod']['usr'] = 'libnms';
-$env['prod']['pwd'] = 'Bismillah3x';
+$env['prod']['db'] = 'libdb';
+$env['prod']['usr'] = 'root';
+$env['prod']['pwd'] = '';
 //dev
 $env['dev']['server'] = 'localhost';
 $env['dev']['db'] = 'librenms';
