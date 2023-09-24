@@ -7,7 +7,7 @@ $page_title="Tickets";
 $modal_title="";
 $card_title="Tickets Report";
 
-$menu="-";
+$menu="rtick";
 
 $breadcrumb="Reports/$page_title";
 

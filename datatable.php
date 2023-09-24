@@ -194,6 +194,9 @@ while($row = fetch_row($result)){
 		$row[4]=$act;
 		$xx='-';
 	}
+	if($x=='rtick'){
+		$xx='-';
+	}
 	
 	if($x!="-"&&$xx!="-"){ //- means no need to modify first column
 		if($template=="aronox"){$row[0]='<a href="#" class="dttbl"  title="Open" data-toggle="modal" data-target="#myModal" onclick="openForm(\''.$x.'\',\''.$row[$col-1].'\');">'.$row[0].'&nbsp;</a>';
