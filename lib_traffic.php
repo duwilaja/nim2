@@ -85,65 +85,42 @@ if(count($ports)>0){
 		
 	<?php
 	}
-	?>
+	
+$yr=date("Y")-1;
+?>
 </div>
 <br />
 <div class="row"><div class="col-lg-12 text-center">
-	<h3>Year : 2022</h3>
-	<table width="100%" border="1">
+<?php for($y=$yr;$y>($yr-2);$y--){?>
+	<h3>Year : <?php echo $y?></h3>
+	<table width="100%" border="1" style="font-size:12px;">
 	<tr style="font-weight:bold;"><td></td>
-	<td>Jan (1)</td><td>Feb (2)</td><td>Mar (3)</td><td style="background-color:#eeeeee;">Quarter 1</td>
-	<td>Apr (4)</td><td>May (5)</td><td>Jun (6)</td><td style="background-color:#eeeeee;">Quarter 2</td>
-	<td>Jul (7)</td><td>Aug (8)</td><td>Sep (9)</td><td style="background-color:#eeeeee;">Quarter 3</td>
-	<td>Oct (10)</td><td>Nov (11)</td><td>Dec (12)</td><td style="background-color:#eeeeee;">Quarter 4</td>
+	<?php $q=1; for($i=1;$i<13;$i++){
+		echo '<td>'.date("M",mktime(0, 0, 0, $i, 10)).'('.$i.')</td>';
+		if(($i%3)==0) {echo '<td style="background-color:#eeeeee;">Quarter '.$q.'</td>'; $q++;}
+	 }?>
 	<td style="background-color:#cccccc;">Year</td></tr>
 	<tr><td style="font-weight:bold;">In</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
+	<?php $q=1; for($i=1;$i<13;$i++){
+		echo '<td id="in_'.$y.'_'.$i.'">0</td>';
+		if(($i%3)==0) {echo '<td id="in_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">0</td>'; $q++;}
+	 }?>
+	<td id="tot_in_<?php echo $y?>" style="background-color:#cccccc;">0</td></tr>
 	<tr><td style="font-weight:bold;">Out</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
+	<?php $q=1; for($i=1;$i<13;$i++){
+		echo '<td id="out_'.$y.'_'.$i.'">0</td>';
+		if(($i%3)==0) {echo '<td id="out_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">0</td>'; $q++;}
+	 }?>
+	<td id="tot_out_<?php echo $y?>" style="background-color:#cccccc;">0</td></tr>
 	<tr><td style="font-weight:bold;">Sum</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
+	<?php $q=1; for($i=1;$i<13;$i++){
+		echo '<td id="sum_'.$y.'_'.$i.'">0</td>';
+		if(($i%3)==0) {echo '<td id="sum_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">0</td>'; $q++;}
+	 }?>
+	<td id="tot_sum_<?php echo $y?>" style="background-color:#cccccc;">0</td></tr>
 	</table>
 	<br />
-	<h3>Year : 2021</h3>
-	<table width="100%" border="1">
-	<tr style="font-weight:bold;"><td></td>
-	<td>Jan (1)</td><td>Feb (2)</td><td>Mar (3)</td><td style="background-color:#eeeeee;">Quarter 1</td>
-	<td>Apr (4)</td><td>May (5)</td><td>Jun (6)</td><td style="background-color:#eeeeee;">Quarter 2</td>
-	<td>Jul (7)</td><td>Aug (8)</td><td>Sep (9)</td><td style="background-color:#eeeeee;">Quarter 3</td>
-	<td>Oct (10)</td><td>Nov (11)</td><td>Dec (12)</td><td style="background-color:#eeeeee;">Quarter 4</td>
-	<td style="background-color:#cccccc;">Year</td></tr>
-	<tr><td style="font-weight:bold;">In</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
-	<tr><td style="font-weight:bold;">Out</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
-	<tr><td style="font-weight:bold;">Sum</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td>0</td><td>0</td><td>0</td><td style="background-color:#eeeeee;">0</td>
-	<td style="background-color:#cccccc;">0</td></tr>
-	</table>
+<?php } //end year?>
 </div></div>
 <?php
 }else{

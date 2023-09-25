@@ -56,8 +56,8 @@ disconnect($conn);
 								</select>
 							</div></div>
 							&nbsp;
-							<button type="button" onclick="submit_r_trfc();" class="btn btn-primary"><i class="fa fa-refresh"></i></button>&nbsp;
-							<button type="button" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn btn-success hidden"><i class="fa fa-file-pdf-o"></i></button>
+							<button type="button" onclick="submit_r_trfc();" class="btn btn-primary col-md-1"><i class="fa fa-refresh"></i></button>&nbsp;
+							<button type="button" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn btn-success col-md-1 hidden"><i class="fa fa-file-pdf-o"></i></button>
 						</div>
 					</div>
 				</div>
