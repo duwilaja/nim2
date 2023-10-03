@@ -493,7 +493,8 @@ $(document).ready(function(){
 	page_ready();
 	displayClock();
 	
-	getData('home1','home-onoff');
+	getOnOff();
+	//getData('home1','home-onoff');
 	get_content("home-province<?php echo $ext?>",{},".ldr-propinsi","#isi-propinsi");
 	get_content("home-speed<?php echo $ext?>",{},".ldr-speed","#isi-speed");
 	get_content("home-alert<?php echo $ext?>",{},".ldr-alert","#isi-alert");
@@ -516,6 +517,11 @@ function displayClock(){
 	
 	
 	setTimeout(displayClock,1000);
+}
+
+function getOnOff(){
+	getData('home1','home-onoff');
+	setTimeout(getOnOff,5*60*1000);
 }
 
 </script>
