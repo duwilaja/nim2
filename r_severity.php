@@ -156,6 +156,8 @@ $(document).ready(function(){
     }});
 	
 	datepicker(true);
+	
+	setTimeout(autoreload,5*60*1000);
 });
 function get_tname(){
 	return $("#df").val()==today||$("#df").val()==''?tname:tnamex;
@@ -182,6 +184,11 @@ function submit_r_severity(){
 	$("#net").val(a[4]);
 	
 	mytbl.ajax.reload();
+}
+
+function autoreload(){
+	submit_r_severity();
+	setTimeout(autoreload,5*60*1000);
 }
 </script>
 

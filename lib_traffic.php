@@ -105,7 +105,7 @@ $yr=date("Y")-1;
 	<td style="background-color:#cccccc;">Year</td></tr>
 	<tr><td style="font-weight:bold;">In</td>
 	<?php $q=1; $tq=0; $ty=0; for($i=1;$i<13;$i++){
-		$in=rand(1000,10000);
+		$in=0;//rand(1000,10000);
 		$ain[]=$in; $tq+=$in; $ty+=$in;
 		echo '<td id="in_'.$y.'_'.$i.'">'.round($in/1000,2).'Gb</td>';
 		if(($i%3)==0) {echo '<td id="in_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">'.round($tq/1000,2).'Gb</td>'; $q++; $tq=0;}
@@ -113,10 +113,10 @@ $yr=date("Y")-1;
 	<td id="tot_in_<?php echo $y?>" style="background-color:#cccccc;"><?php echo round($ty/1000,2)?>Gb</td></tr>
 	<tr><td style="font-weight:bold;">Out</td>
 	<?php $q=1; $tq=0; $ty=0; for($i=1;$i<13;$i++){
-		$out=rand(1000,10000);
+		$out=0;//rand(1000,10000);
 		$aout[]=$out; $tq+=$out; $ty+=$out;
 		echo '<td id="out_'.$y.'_'.$i.'">'.round($out/1000,2).'Gb</td>';
-		if(($i%3)==0) {echo '<td id="out_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">'.round($tq/1000,2).'</td>'; $q++; $tq=0;}
+		if(($i%3)==0) {echo '<td id="out_'.$y.'_q_'.$q.'" style="background-color:#eeeeee;">'.round($tq/1000,2).'Gb</td>'; $q++; $tq=0;}
 	 }?>
 	<td id="tot_out_<?php echo $y?>" style="background-color:#cccccc;"><?php echo round($ty/1000,2)?>Gb</td></tr>
 	<tr><td style="font-weight:bold;">Sum</td>

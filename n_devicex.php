@@ -188,12 +188,18 @@ $(document).ready(function(){
 			required : true
 		}
     }});
+	
+	setTimeout(autoreload,5*60*1000);
 });
 
 function reloadtbl(){
 	mytbl.ajax.reload();
 }
 
+function autoreload(){
+	reloadtbl();
+	setTimeout(autoreload,5*60*1000);
+}
 </script>
 
   </body>
