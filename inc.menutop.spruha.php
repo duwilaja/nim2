@@ -99,6 +99,7 @@
 							<li class="nav-sub-item"><a class="nav-sub-link rseverity" href="r_severity<?php echo $ext?>">Severity</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link rupdown" href="r_updown<?php echo $ext?>">UP/Down</a></li>
 							<li class="nav-sub-item"><a class="nav-sub-link rtraffic" href="r_traffic<?php echo $ext?>">Traffic</a></li>
+							<li class="nav-sub-item"><a class="nav-sub-link rtraffic" href="r_gen<?php echo $ext?>">Generate</a></li>
 						</ul>
 					</li>
 					<li class="nav-item">

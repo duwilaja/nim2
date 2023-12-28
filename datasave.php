@@ -83,8 +83,16 @@ if($mn=='mbg'){
 	$res=crud($conn);
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
-if($mn=='mev'){
+if($mn=='mbg'){
 	$res=crud($conn);
+	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
+}
+if($mn=='rgen'){
+	if(post('sv')=='NEW'){
+		$res=crud($conn,"job","UNIX_TIMESTAMP()");
+	}else{
+		$res=crud($conn);
+	}
 	$code=$res[0]; $ttl=$res[1]; $msgs=$res[2];
 }
 if($mn=='mdevice'){
