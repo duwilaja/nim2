@@ -24,7 +24,7 @@ disconnect($conn);
 						<?php foreach($recs as $r){?>
 							<div class="col-md-6 col-sm-12">
 							<?php echo $r['host']?> - <?php echo $r['nm']?><br />
-							<img style="width:100%" src="<?php echo $rpt_dir.$r['host'].'/'.$r['host']?>.png" />
+							<img style="width:100%" src="<?php echo $rpt_dir.$r['job'].'/'.$r['host']?>.png" />
 							</div>
 						<?php }?>
 						</div>
