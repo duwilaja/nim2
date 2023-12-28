@@ -27,6 +27,7 @@ switch($q){
 	case 'mlov': $sql="select * from core_lov where rowid='$id'"; break;
 	case 'mbg': $sql="select *,if(running='1','Running',if(startnow='1','Starting','Stopped')) as status from core_bgjob where rowid='$id'"; break;
 	case 'mev': $sql="select * from core_events where rowid='$id'"; break;
+	case 'rgen': $sql="select * from core_bgrpt where rowid='$id'"; break;
 	
 	case 'mbrand': $sql="select * from ass_brand where rowid='$id'"; break;
 	case 'mascat': $sql="select * from ass_cat where rowid='$id'"; break;
