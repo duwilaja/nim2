@@ -12,14 +12,20 @@ include "inc.head.php";
 include "inc.db.php";
 
 $conn=connect();
-$sql="select  * from core_bgrptjob where job='".get('j',$conn)."'";
+$j=get('j',$conn);
+$sql="select  * from core_bgrpt where job='$j'";
+$rpt=fetch_alla(exec_qry($conn,$sql));
+$sql="select  * from core_bgrptjob where job='$j'";
 $recs=fetch_alla(exec_qry($conn,$sql));
 disconnect($conn);
+
+if(count($rpt)<1 && count($recs)<1) die("no data found");
+ 
 ?>
 				<div class="app-content page-body">
 					<div class="container" style="text-align:center">
-					<h5>Title</h5>
-					<h6>Desc</h6>
+					<h5><?php echo $rpt[0]['ttl']?></h5>
+					<h6><?php echo str_ireplace("\n","<br />",$rpt[0]['dscr'])?></h6>
 						<div class="row">
 						<?php foreach($recs as $r){?>
 							<div class="col-md-6 col-sm-12">
