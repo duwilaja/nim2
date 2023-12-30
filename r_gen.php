@@ -191,6 +191,7 @@ $(document).ready(function(){
 		processing: true,
 		searching: true,
 		buttons: ['copy', 'csv'],
+		order: [[7,'desc']],
 		ajax: {
 			type: 'POST',
 			url: 'datatable<?php echo $ext?>',
