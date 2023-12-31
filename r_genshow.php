@@ -23,7 +23,7 @@ if(count($rpt)<1 && count($recs)<1) die("no data found");
  
 ?>
 				<div class="app-content page-body">
-					<div class="container" style="text-align:center">
+					<div class="container" style="text-align:center" id="prin">
 					<h5><?php echo $rpt[0]['ttl']?></h5>
 					<h6><?php echo str_ireplace("\n","<br />",$rpt[0]['dscr'])?></h6>
 						<div class="row">
@@ -35,6 +35,9 @@ if(count($rpt)<1 && count($recs)<1) die("no data found");
 						<?php }?>
 						</div>
 					</div>
+					<div class="row"><div class="col-12" style="text-align:right;">
+					<button type="button" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn col-md-1"><i class="fa fa-file-pdf-o"></i></button>
+					</div></div>
 				</div><!-- end app-content-->
 				
 			<!-- Main Content-->
@@ -43,10 +46,41 @@ if(count($rpt)<1 && count($recs)<1) die("no data found");
 //include "inc.foot.php";
 include "inc.js.php";
 ?>
+
+<script type="text/javascript" src="vendor/pdf/jspdf.min.js"></script>
+<script type="text/javascript" src="vendor/pdf/html2canvas.js"></script>
+
 <script>
 $(document).ready(function(){
 	page_ready();
 })
+
+//Create PDf from HTML...
+function CreatePDFfromHTML() {
+	
+    var HTML_Width = $("#prin").width();
+    var HTML_Height = $("#prin").height();
+    var top_left_margin = 15;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+    html2canvas($("#prin")[0]).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+        }
+        pdf.save("<?php echo $j?>.pdf");
+        //$(".html-content").hide();
+    });
+}
+
 </script>
 
   </body>

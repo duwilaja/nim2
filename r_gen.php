@@ -134,8 +134,10 @@ include "inc.menutop.php";
 				<label>Device/Group</label>
 				<select class="form-control " id="grp" name="grp">
 					<option value=""></option>
+					<?php if($gx==''){?>
 					<option value="all">All</option>
 					<option value="list">List</option>
+					<?php }?>
 					<?php echo options($o_grp)?>
 				</select>
 			</div>
