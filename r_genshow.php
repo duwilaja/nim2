@@ -36,7 +36,7 @@ if(count($rpt)<1 && count($recs)<1) die("no data found");
 						</div>
 					</div>
 					<div class="row"><div class="col-12" style="text-align:right;">
-					<a href="#" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
+					<a href="#" id="btnpdf" onclick="CreatePDFfromHTML();" class="btn" title="PDF" style="border: 1px solid #aaa;"><i class="fa fa-file-pdf-o"></i></a>
 					</div></div>
 				</div><!-- end app-content-->
 				
