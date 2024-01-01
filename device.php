@@ -94,8 +94,8 @@ include "inc.head.php";
 												<div class="tabs-menu1 ">
 													<!-- Tabs -->
 													<ul class="nav panel-tabs">
-														<li><a href="#tab6" data-toggle="tab" class="">Log</a></li>
-														<li><a href="#tab7" data-toggle="tab" class="">Trace</a></li>
+														<li><a href="#tab6" data-toggle="tab" class="btn tabx" onclick="togel('#tab6')">Log</a></li>
+														<li><a href="#tab7" data-toggle="tab" class="btn tabx" onclick="togel('#tab7');">Trace</a></li>
 													</ul>
 												</div>
 											</div>
@@ -176,6 +176,11 @@ $(document).ready(function(){
 	get_content("device_perf<?php echo $ext?>",{h:"<?php echo $h?>"},".ldr-perf","#isi-perf");
 	
 })
+
+function togel(x){
+	$(".tabx").hide();
+	$(x).show();
+}
 </script>
 
   </body>
