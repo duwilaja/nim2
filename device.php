@@ -94,18 +94,18 @@ include "inc.head.php";
 												<div class="tabs-menu1 ">
 													<!-- Tabs -->
 													<ul class="nav panel-tabs">
-														<li><a href="#tab6" data-toggle="tab" class="btn tabx" onclick="togel('#tab6')">Log</a></li>
-														<li><a href="#tab7" data-toggle="tab" class="btn tabx" onclick="togel('#tab7');">Trace</a></li>
+														<li><a href="#tab6" data-toggle="tab" class="btn" onclick="togel('#tab6')">Log</a></li>
+														<li><a href="#tab7" data-toggle="tab" class="btn" onclick="togel('#tab7');">Trace</a></li>
 													</ul>
 												</div>
 											</div>
 											<div class="panel-body tabs-menu-body">
 												<div class="tab-content">
-													<div class="tab-pane" id="tab6">
+													<div class="tab-pane tabx" id="tab6">
 														<pre id="isi-tab6"></pre>
 														<span class="ldr-log">Loading...</span>
 													</div>
-													<div class="tab-pane" id="tab7">
+													<div class="tab-pane tabx" id="tab7">
 														<pre id="isi-tab7"></pre>
 														<span class="ldr-trace">Loading...</span>
 													</div>
