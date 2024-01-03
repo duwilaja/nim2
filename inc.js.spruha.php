@@ -76,6 +76,22 @@
 	$(".container").addClass("inner-body");
 	
 	setTimeout(function(){$(".text-white").addClass("text-whitex").removeClass("text-white");},3000);
+	
+	function toggle_dark(){
+		$.ajax({
+		type: 'POST',
+		url: 'datasave'+ext,
+		data: {mnu:'theme'},
+		success: function(data){
+			log('OK');
+		},
+		error: function(xhr){
+			log('Please check your connection'+xhr);
+		}
+	});
+	}
+	
+	$(".container").removeClass("container");
 	</script>
 	<!-- my own custom js -->
 	<script src="js/custom.spruha.js"></script>
