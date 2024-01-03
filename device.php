@@ -94,8 +94,8 @@ include "inc.head.php";
 												<div class="tabs-menu1 ">
 													<!-- Tabs -->
 													<ul class="nav panel-tabs">
-														<li><a href="#tab6" data-toggle="tab" class="btn" onclick="togel('#tab6')">Log</a></li>
-														<li><a href="#tab7" data-toggle="tab" class="btn" onclick="togel('#tab7');">Trace</a></li>
+														<li><button type="button" class="btn" onclick="togel('#tab6')">Log</button></li>
+														<li><button type="button" class="btn" onclick="togel('#tab7');">Trace</button></li>
 													</ul>
 												</div>
 											</div>
