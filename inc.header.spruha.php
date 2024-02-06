@@ -5,16 +5,15 @@
 					<a class="main-header-menu-icon" href="javascript:void(0)" id="mainSidebarToggle"><span></span></a>
 					<div class="hor-logo">
 						<a class="main-logo" href="#">
-							<img src="spruha/assets/img/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-							<img src="spruha/assets/img/brand/logo-light.png" class="header-brand-img desktop-logo-dark"
-								alt="logo">
+							<img src="img/polrikotak.png" class="header-brand-img desktop-logo" style="height:37px;" alt="logo">
+							<img src="img/polrikotak.png" class="header-brand-img desktop-logo-dark" alt="logo">
 						</a>
 					</div>
 				</div>
 				<div class="main-header-center">
 					<div class="responsive-logo">
-						<a href="#"><img src="spruha/assets/img/brand/logo.png" class="mobile-logo" alt="logo"></a>
-						<a href="#"><img src="spruha/assets/img/brand/logo-light.png" class="mobile-logo-dark"
+						<a href="#"><img src="img/polrikotakh.png" class="mobile-logo" alt="logo"></a>
+						<a href="#"><img src="img/polrikotak.png" class="mobile-logo-dark"
 								alt="logo"></a>
 					</div>
 					<div class="input-group">

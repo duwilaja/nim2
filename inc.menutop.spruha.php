@@ -5,10 +5,10 @@
 				<div class="main-sidebar-header main-container-1 active">
 					<div class="sidemenu-logo">
 						<a class="main-logo" href="index.html">
-							<img src="spruha/assets/img/brand/logo-light.png" class="header-brand-img desktop-logo" alt="logo">
-							<img src="spruha/assets/img/brand/icon-light.png" class="header-brand-img icon-logo" alt="logo">
-							<img src="spruha/assets/img/brand/logo.png" class="header-brand-img desktop-logo theme-logo" alt="logo">
-							<img src="spruha/assets/img/brand/icon.png" class="header-brand-img icon-logo theme-logo" alt="logo">
+							<img src="img/polrikotak.png" class="header-brand-img desktop-logo" alt="logo">
+							<img src="img/polri.png" class="header-brand-img icon-logo" style="height:37px;" alt="logo">
+							<img src="img/polrikotak.png" class="header-brand-img desktop-logo theme-logo" alt="logo">
+							<img src="img/polri.png" class="header-brand-img icon-logo theme-logo" style="height:37px;" alt="logo">
 						</a>
 					</div>
 				<!-- BEGIN menu -->
